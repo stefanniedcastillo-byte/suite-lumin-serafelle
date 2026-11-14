@@ -1,0 +1,679 @@
+<!doctype html>
+<!--
+  =====================================================================
+  PÁGINA WEB JUAN DAVID SUÁREZ AZA (perfil deportivo)
+  Exportado de Claude el 14 de noviembre de 2026 para alojarlo por tu cuenta (Netlify).
+  ---------------------------------------------------------------------
+  QUÉ ES: perfil de jugador: banner rotativo, datos, logros, video de jugadas, prensa, galerías y contacto.
+  CÓMO ESTÁ ORGANIZADO este archivo (busca estas marcas con Ctrl+F):
+   - "INICIO bloque de estilos CSS"  -> todo el diseño (colores, tipografías, tamaños)
+   - "INICIO sección: ..."            -> cada parte visible de la página
+   - "INICIO lógica JavaScript"       -> el funcionamiento (botones, cálculos, guardado)
+   - "INICIO sección JS: ..."         -> subpartes dentro del JavaScript
+  NOTAS PARA QUIEN LO EDITE (persona o IA):
+   - Es una página con carpetas: index.html + img/ + pdf/ (fichas) + video/ (jugadas.mp4, ~14 MB). Sube la CARPETA COMPLETA a Netlify.
+   - No funciona si solo subes index.html: las fotos, fichas y el video están en sus carpetas.
+   - Los textos y cifras (títulos, datos, clubes) están en el HTML; busca "INICIO sección".
+   - Los videos de entrenamiento son enlaces a YouTube (necesitan internet).
+  =====================================================================
+-->
+<html lang="es"><head><meta charset="utf-8"><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover">
+<!-- ===== INICIO bloque de estilos CSS n.º 1 (PÁGINA WEB JUAN DAVID SUÁREZ AZA (perfil deportivo)) ===== -->
+<style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
+<!-- ===== FIN bloque de estilos CSS n.º 1 ===== -->
+<title>Juan David Suárez Aza</title></head><body>
+
+<meta name="description" content="Juan David Suárez Aza · Defensa central · categoría 2009 · Bogotá, Colombia. 5 títulos, 3 internacionales. Video de jugadas, logros y contacto.">
+<meta property="og:title" content="Juan David Suárez Aza · Defensa central">
+<meta property="og:description" content="Categoría 2009 · Bogotá. 5 títulos, 3 internacionales. Video de jugadas, logros y contacto.">
+<meta property="og:image" content="https://soyjuansuarez05.netlify.app/img/compartir.jpg">
+<meta property="og:url" content="https://soyjuansuarez05.netlify.app/">
+<meta property="og:type" content="profile">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@500;600;700&display=swap">
+
+<!-- ===== INICIO bloque de estilos CSS n.º 2 (PÁGINA WEB JUAN DAVID SUÁREZ AZA (perfil deportivo)) ===== -->
+<style>
+/* Perfil de jugador: noche de estadio azul marino con dorado, como sus fichas.
+   Una sola apariencia oscura a propósito. Banner rotativo arriba, luego datos, logros y material. */
+:root {
+  --noche: #0a1428;
+  --noche-2: #101e3a;
+  --linea: #24365c;
+  --oro: #d6a845;
+  --oro-claro: #f0cf7e;
+  --texto: #eef1f7;
+  --texto-2: #9fadc8;
+  --cesped: #1f5a3a;
+  --display: "Big Shoulders Display", "Arial Narrow", Impact, sans-serif;
+  --cuerpo: "Barlow", "Segoe UI", Roboto, Arial, sans-serif;
+  --etiqueta: "Barlow Condensed", "Arial Narrow", "Segoe UI", sans-serif;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { animation: none !important; transition: none !important; } }
+body { margin: 0; background: var(--noche); color: var(--texto); font-family: var(--cuerpo); font-size: 17px; line-height: 1.55; }
+img { max-width: 100%; height: auto; display: block; }
+a { color: var(--oro-claro); }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--oro-claro); outline-offset: 3px; }
+.envoltura { max-width: 1120px; margin: 0 auto; padding-left: max(20px, env(safe-area-inset-left, 0px)); padding-right: max(20px, env(safe-area-inset-right, 0px)); }
+
+/* ===== INICIO estilos: Barra superior ===== */
+.barra { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 10; background: color-mix(in srgb, var(--noche) 88%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid var(--linea); }
+.barra .envoltura { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 12px; }
+.marca { font-family: var(--display); font-weight: 900; font-size: 24px; letter-spacing: .02em; text-decoration: none; color: var(--texto); }
+.marca span { color: var(--oro); }
+.menu { display: flex; gap: 20px; flex-wrap: wrap; }
+.menu a { font-family: var(--etiqueta); font-weight: 600; text-transform: uppercase; letter-spacing: .12em; font-size: 14px; color: var(--texto-2); text-decoration: none; }
+.menu a:hover { color: var(--oro-claro); }
+@media (max-width: 720px) { .menu { display: none; } }
+
+/* ===== INICIO estilos: Banner rotativo ===== */
+.banner { position: relative; overflow: hidden; border-bottom: 1px solid var(--linea); background: radial-gradient(90% 120% at 85% 20%, #16294d 0%, var(--noche) 65%); }
+.banner::before { content: "JD5"; position: absolute; right: -1%; top: -6%; font-family: var(--display); font-weight: 900; font-size: min(42vw, 520px); line-height: 1; color: transparent; -webkit-text-stroke: 2px color-mix(in srgb, var(--oro) 22%, transparent); pointer-events: none; }
+.slides { display: grid; }
+.slide { grid-area: 1 / 1; opacity: 0; visibility: hidden; transition: opacity .7s ease, visibility .7s; }
+.slide.activa { opacity: 1; visibility: visible; }
+.slide .envoltura { position: relative; display: grid; grid-template-columns: 1.15fr .85fr; gap: 40px; align-items: center; padding-block: 52px 64px; min-height: 560px; }
+.slide-texto { min-width: 0; }
+.slide-foto { min-width: 0; justify-self: center; }
+.marco { width: min(380px, 100%); aspect-ratio: 4 / 5; border: 2px solid var(--oro); box-shadow: 18px 18px 0 -2px color-mix(in srgb, var(--oro) 30%, transparent); overflow: hidden; }
+.marco img { width: 100%; height: 100%; object-fit: cover; object-position: center 25%; }
+.circulo { width: min(440px, 100%); aspect-ratio: 1; border-radius: 50%; overflow: hidden; box-shadow: 0 0 0 3px var(--oro), 0 0 60px color-mix(in srgb, var(--oro) 35%, transparent); }
+.circulo img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.04); }
+@media (max-width: 820px) {
+  .slide .envoltura { grid-template-columns: 1fr; gap: 28px; padding-block: 32px 64px; min-height: 0; }
+  .slide-foto { order: -1; }
+  .marco { width: min(300px, 80vw); }
+  .circulo { width: min(300px, 78vw); }
+}
+.eyebrow { font-family: var(--etiqueta); font-weight: 600; text-transform: uppercase; letter-spacing: .28em; font-size: 14px; color: var(--oro); margin: 0 0 14px; }
+.titular { font-family: var(--display); font-weight: 900; text-transform: uppercase; line-height: .86; margin: 0; font-size: clamp(60px, 10vw, 124px); letter-spacing: -.005em; text-wrap: balance; }
+.titular .oro { color: var(--oro); display: block; }
+.titular.medio { font-size: clamp(48px, 7.5vw, 96px); }
+.apellidos { font-family: var(--etiqueta); font-weight: 600; text-transform: uppercase; letter-spacing: .42em; font-size: clamp(18px, 2.6vw, 26px); margin: 14px 0 22px; }
+.cinta { display: inline-flex; align-items: center; background: linear-gradient(90deg, var(--oro), var(--oro-claro)); color: var(--noche); font-family: var(--etiqueta); font-weight: 700; text-transform: uppercase; letter-spacing: .2em; font-size: 18px; padding: 8px 30px 8px 18px; clip-path: polygon(0 0, 100% 0, calc(100% - 14px) 100%, 0 100%); }
+.disponible-pill { display: inline-flex; align-items: center; gap: 8px; margin-left: 12px; vertical-align: middle; font-family: var(--etiqueta); font-weight: 700; text-transform: uppercase; letter-spacing: .14em; font-size: 14px; color: var(--texto); padding: 7px 12px; border: 1px solid #3fae6a; background: rgba(63, 174, 106, .14); }
+.disponible-pill::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: #4fd17f; }
+.disponible { color: var(--texto); font-weight: 600; }
+@media (max-width: 520px) { .disponible-pill { margin: 12px 0 0; } }
+.lema { margin: 22px 0 0; max-width: 46ch; color: var(--texto-2); font-size: 18px; }
+.lema b { color: var(--texto); font-weight: 600; }
+.botones { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
+.boton { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; cursor: pointer; font-family: var(--etiqueta); font-weight: 700; text-transform: uppercase; letter-spacing: .14em; font-size: 15px; padding: 13px 22px; border: 1px solid var(--oro); color: var(--oro-claro); background: transparent; }
+.boton.lleno { background: var(--oro); color: var(--noche); }
+.boton:hover { background: var(--oro-claro); color: var(--noche); border-color: var(--oro-claro); }
+.anios { list-style: none; margin: 22px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.anios li { font-family: var(--etiqueta); font-weight: 600; text-transform: uppercase; letter-spacing: .08em; font-size: 15px; padding: 6px 12px; border: 1px solid var(--linea); background: color-mix(in srgb, var(--noche-2) 80%, transparent); }
+.anios li b { color: var(--oro-claro); margin-left: 6px; }
+.controles { position: absolute; left: 0; right: 0; bottom: 18px; display: flex; justify-content: center; align-items: center; gap: 14px; z-index: 2; }
+.punto { width: 34px; height: 4px; padding: 0; border: 0; background: var(--linea); cursor: pointer; }
+.punto[aria-current="true"] { background: var(--oro); }
+.flecha { width: 36px; height: 36px; display: grid; place-items: center; border: 1px solid var(--linea); background: color-mix(in srgb, var(--noche) 80%, transparent); color: var(--texto); cursor: pointer; font-size: 18px; line-height: 1; }
+.flecha:hover { border-color: var(--oro); color: var(--oro-claro); }
+
+/* ===== INICIO estilos: Secciones ===== */
+section { padding-block: 72px; border-bottom: 1px solid var(--linea); }
+h2 { font-family: var(--display); font-weight: 900; text-transform: uppercase; font-size: clamp(38px, 6vw, 60px); line-height: .95; margin: 0 0 8px; text-wrap: balance; }
+.sub { color: var(--texto-2); margin: 0 0 36px; max-width: 62ch; }
+
+/* ===== INICIO estilos: Datos ===== */
+.datos-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: start; }
+@media (max-width: 820px) { .datos-grid { grid-template-columns: 1fr; } }
+.tabla-datos { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: 1px solid var(--linea); margin: 0; }
+.dato { padding: 18px 4px; border-bottom: 1px solid var(--linea); }
+.dato:nth-child(odd) { padding-right: 20px; }
+.dato dt { font-family: var(--etiqueta); font-weight: 600; text-transform: uppercase; letter-spacing: .18em; font-size: 13px; color: var(--oro); }
+.dato dd { margin: 4px 0 0; font-family: var(--display); font-weight: 700; font-size: 32px; line-height: 1.05; font-variant-numeric: tabular-nums; }
+.dato dd small { font-family: var(--cuerpo); font-weight: 500; font-size: 15px; color: var(--texto-2); }
+.cancha-caja { margin: 0; background: var(--noche-2); border: 1px solid var(--linea); padding: 22px; }
+.cancha-caja figcaption { font-family: var(--etiqueta); text-transform: uppercase; letter-spacing: .16em; font-size: 13px; color: var(--texto-2); margin-top: 14px; }
+.cancha-caja figcaption b { color: var(--oro-claro); font-weight: 700; }
+.cancha { width: 100%; height: auto; display: block; }
+
+/* ===== INICIO estilos: Fortalezas ===== */
+.fortalezas { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); border-top: 1px solid var(--linea); }
+.fortalezas li { padding: 22px 20px 22px 0; border-bottom: 1px solid var(--linea); display: grid; gap: 6px; }
+.fortalezas li.especial b { color: var(--oro-claro); }
+.fortalezas b { font-family: var(--display); font-weight: 700; font-size: 26px; text-transform: uppercase; color: var(--texto); }
+.fortalezas span { color: var(--texto-2); font-size: 15px; }
+
+/* ===== INICIO estilos: Trayectoria ===== */
+.tabla-scroll { overflow-x: auto; }
+.clubes { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+.clubes th { text-align: left; font-family: var(--etiqueta); font-weight: 600; text-transform: uppercase; letter-spacing: .16em; font-size: 13px; color: var(--oro); padding: 0 12px 10px 0; border-bottom: 1px solid var(--linea); }
+.clubes td { padding: 16px 12px 16px 0; border-bottom: 1px solid var(--linea); font-size: 18px; font-weight: 500; }
+.clubes .num { text-align: right; padding-right: 0; font-family: var(--display); font-weight: 700; font-size: 26px; }
+.clubes th.num { font-family: var(--etiqueta); font-size: 13px; }
+.nota-club { color: var(--texto-2); font-size: 14px; font-weight: 400; }
+.pill { display: inline-block; margin-left: 8px; padding: 2px 8px; font-family: var(--etiqueta); font-weight: 700; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--noche); background: var(--oro); vertical-align: middle; }
+.otros { margin: 22px 0 0; color: var(--texto-2); }
+.otros b { color: var(--texto); font-weight: 600; }
+
+/* ===== INICIO estilos: Logros ===== */
+.resumen-titulos { display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px 22px; margin: 0 0 30px; }
+.resumen-titulos b { font-family: var(--display); font-weight: 900; font-size: clamp(56px, 9vw, 92px); line-height: .9; color: var(--oro-claro); }
+.resumen-titulos span { font-family: var(--etiqueta); font-weight: 700; text-transform: uppercase; letter-spacing: .2em; font-size: 18px; }
+.logros { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+@media (max-width: 900px) { .logros { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 520px) { .logros { grid-template-columns: 1fr; } }
+.logro-card { margin: 0; background: var(--noche-2); border: 1px solid var(--linea); display: grid; grid-template-rows: auto 1fr; }
+.logro-card.campeon { border-color: color-mix(in srgb, var(--oro) 70%, transparent); }
+.logro-card img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 25%; }
+.logro-card figcaption { padding: 14px 16px 18px; display: grid; gap: 4px; align-content: start; }
+.logro-eti { font-family: var(--etiqueta); font-weight: 700; text-transform: uppercase; letter-spacing: .22em; font-size: 12px; color: var(--oro); }
+.logro-card b { font-family: var(--display); font-weight: 900; text-transform: uppercase; font-size: 26px; line-height: 1; }
+.logro-card figcaption span:last-child { color: var(--texto-2); font-size: 14px; }
+
+/* ===== INICIO estilos: Video y gimnasio ===== */
+.video-marco { border: 1px solid var(--linea); background: #000; }
+.video-marco video { width: 100%; display: block; aspect-ratio: 16 / 9; background: #000; }
+.nota-video { color: var(--texto-2); font-size: 15px; margin-top: 14px; }
+.gym { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 14px; }
+.gym-card { position: relative; display: grid; align-content: end; gap: 4px; min-height: 150px; padding: 18px; text-decoration: none; color: var(--texto); background: linear-gradient(160deg, var(--noche-2), #0d1a33); border: 1px solid var(--linea); }
+.gym-card:hover { border-color: var(--oro); }
+.gym-card b { font-family: var(--display); font-weight: 900; text-transform: uppercase; font-size: 30px; line-height: 1; }
+.gym-card > span:last-child { font-family: var(--etiqueta); font-weight: 600; letter-spacing: .14em; text-transform: uppercase; font-size: 13px; color: var(--oro-claro); }
+.gym-play { position: absolute; top: 18px; left: 18px; width: 44px; height: 44px; border-radius: 50%; background: var(--oro); }
+.gym-play::after { content: ""; position: absolute; left: 17px; top: 13px; border-left: 14px solid var(--noche); border-top: 9px solid transparent; border-bottom: 9px solid transparent; }
+.gym-video { margin: 0; border: 1px solid var(--linea); background: #000; }
+.gym-video iframe { width: 100%; aspect-ratio: 16 / 9; border: 0; display: block; }
+.gym-video figcaption { padding: 10px 12px; font-family: var(--etiqueta); font-weight: 600; letter-spacing: .14em; text-transform: uppercase; font-size: 14px; color: var(--oro-claro); background: var(--noche-2); }
+
+/* ===== INICIO estilos: Prensa ===== */
+.prensa { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 24px 40px; align-items: end; padding: 28px; border: 1px solid var(--linea); background: var(--noche-2); }
+@media (max-width: 720px) { .prensa { grid-template-columns: 1fr; } }
+.prensa-medio { font-family: var(--etiqueta); font-weight: 600; text-transform: uppercase; letter-spacing: .16em; font-size: 13px; color: var(--oro); margin: 0 0 10px; }
+.prensa h3 { font-family: var(--display); font-weight: 900; text-transform: uppercase; font-size: clamp(28px, 4.4vw, 44px); line-height: 1; margin: 0 0 14px; text-wrap: balance; }
+.prensa p { margin: 0; color: var(--texto-2); max-width: 62ch; }
+
+/* ===== INICIO estilos: Galerías ===== */
+.galeria { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+.galeria figure { margin: 0; position: relative; overflow: hidden; background: var(--noche-2); }
+.galeria img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 30%; transition: transform .4s ease; }
+.galeria figure:hover img { transform: scale(1.04); }
+.galeria figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 22px 12px 10px; background: linear-gradient(transparent, rgba(5, 10, 22, .85)); font-family: var(--etiqueta); font-weight: 600; text-transform: uppercase; letter-spacing: .14em; font-size: 13px; color: var(--texto); }
+.galeria.cuadrada img { aspect-ratio: 1 / 1; object-position: center; }
+.galeria.momentos img { object-position: center 20%; }
+@media (max-width: 820px) { .galeria { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.galeria-titulo { font-family: var(--etiqueta); font-weight: 700; text-transform: uppercase; letter-spacing: .2em; font-size: 15px; color: var(--oro); margin: 40px 0 14px; }
+.galeria-titulo:first-of-type { margin-top: 0; }
+
+/* ===== INICIO estilos: Fichas ===== */
+.fichas { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.fichas a { display: block; text-decoration: none; color: var(--texto); }
+.fichas img { width: 100%; border: 1px solid var(--linea); }
+.fichas span { display: block; margin-top: 10px; font-family: var(--etiqueta); font-weight: 600; text-transform: uppercase; letter-spacing: .14em; font-size: 14px; color: var(--oro-claro); }
+@media (max-width: 560px) { .fichas { grid-template-columns: 1fr; } }
+
+/* ===== INICIO estilos: Contacto ===== */
+.contacto { background: linear-gradient(135deg, var(--noche-2), var(--noche)); }
+.contactos { margin: 0; display: grid; border-top: 1px solid var(--linea); }
+.contacto-item { display: grid; grid-template-columns: 240px minmax(0, 1fr) auto; gap: 8px 24px; align-items: center; padding-block: 18px; border-bottom: 1px solid var(--linea); }
+.contacto-item dt { font-family: var(--etiqueta); font-weight: 600; text-transform: uppercase; letter-spacing: .16em; font-size: 14px; color: var(--oro); }
+.contacto-item dd { margin: 0; min-width: 0; }
+.valor { font-family: var(--display); font-weight: 700; font-size: clamp(22px, 3.6vw, 34px); color: var(--texto); overflow-wrap: anywhere; user-select: all; }
+.con-foto { display: flex; align-items: center; gap: 14px; }
+.avatar { width: 56px; height: 56px; border-radius: 50%; flex: none; box-shadow: 0 0 0 2px var(--oro); object-fit: cover; }
+@media (max-width: 720px) { .contacto-item { grid-template-columns: 1fr; } }
+footer { padding-block: 28px; color: var(--texto-2); font-size: 14px; }
+footer .envoltura { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+</style>
+<!-- ===== FIN bloque de estilos CSS n.º 2 ===== -->
+
+
+
+<!-- ===== INICIO sección: .barra ===== -->
+<header class="barra">
+  <div class="envoltura">
+    <a class="marca" href="#inicio">JD<span>5</span></a>
+    
+<!-- ===== INICIO sección: .menu ===== -->
+<nav class="menu" aria-label="Secciones">
+      <a href="#datos">Datos</a>
+      <a href="#logros">Logros</a>
+      <a href="#video">Video</a>
+      <a href="#fotos">Fotos</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+<!-- ===== FIN sección: .menu ===== -->
+
+  </div>
+</header>
+<!-- ===== FIN sección: .barra ===== -->
+
+
+
+<!-- ===== INICIO sección: #inicio ===== -->
+<main id="inicio">
+  <div class="banner" aria-roledescription="carrusel" aria-label="Presentación de Juan David">
+    <div class="slides">
+      <div class="slide activa" aria-roledescription="diapositiva" aria-label="1 de 4">
+        <div class="envoltura">
+          <div class="slide-texto">
+            <p class="eyebrow">Bogotá · Colombia · Categoría 2009</p>
+            <h1 class="titular">Juan <span class="oro">David</span></h1>
+            <p class="apellidos">Suárez Aza</p>
+            <div class="cinta">Defensa central</div>
+            <span class="disponible-pill">Disponible para pruebas</span>
+            <p class="lema">Defensa de 1,82 m que <b>cobra tiros libres</b> y <b>llega al gol</b>. Campeón con PSG Juan XXIII. Busca una oportunidad en pruebas y divisiones menores de clubes profesionales.</p>
+            <div class="botones">
+              <a class="boton lleno" href="#video">Ver jugadas</a>
+              <a class="boton" href="#contacto">Contactar</a>
+            </div>
+          </div>
+          <div class="slide-foto"><div class="circulo"><img src="img/perfil.jpg" alt="Foto de perfil de Juan David con el logo JDS" width="760" height="742"></div></div>
+        </div>
+      </div>
+
+      <div class="slide" aria-roledescription="diapositiva" aria-label="2 de 4">
+        <div class="envoltura">
+          <div class="slide-texto">
+            <p class="eyebrow">Palmarés</p>
+            <h2 class="titular medio">5 títulos <span class="oro">3 internacionales</span></h2>
+            <ul class="anios">
+              <li>Ecuador<b>2024</b></li>
+              <li>Liga de Bogotá<b>2024</b></li>
+              <li>Arrayanes<b>2024</b></li>
+              <li>Fútbol Sin Fronteras<b>2023</b></li>
+              <li>Perú<b>2023</b></li>
+            </ul>
+            <div class="botones"><a class="boton lleno" href="#logros">Ver logros</a></div>
+          </div>
+          <div class="slide-foto"><div class="marco"><img src="img/banner-campeon.jpg" alt="Juan David con el trofeo de campeón de la Liga de Fútbol de Bogotá" width="536" height="713"></div></div>
+        </div>
+      </div>
+
+      <div class="slide" aria-roledescription="diapositiva" aria-label="3 de 4">
+        <div class="envoltura">
+          <div class="slide-texto">
+            <p class="eyebrow">Más que un defensa</p>
+            <h2 class="titular medio">Cobra y <span class="oro">llega al gol</span></h2>
+            <p class="lema">Cobra los tiros libres de su equipo, anota de cabeza y desde lejos. Buena salida con balón y pase largo con la derecha.</p>
+            <div class="botones"><a class="boton lleno" href="#video">Ver los goles</a></div>
+          </div>
+          <div class="slide-foto"><div class="marco"><img src="img/remate.jpg" alt="Juan David pateando el balón con la pierna derecha" width="900" height="1126"></div></div>
+        </div>
+      </div>
+
+      <div class="slide" aria-roledescription="diapositiva" aria-label="4 de 4">
+        <div class="envoltura">
+          <div class="slide-texto">
+            <p class="eyebrow">Preparación</p>
+            <h2 class="titular medio">Trabajo <span class="oro">todos los días</span></h2>
+            <p class="lema">Entrenamiento con balón, agilidad y gimnasio. Disciplina, trabajo y evolución.</p>
+            <div class="botones"><a class="boton lleno" href="#gimnasio">Ver gimnasio</a><a class="boton" href="#fotos">Ver fotos</a></div>
+          </div>
+          <div class="slide-foto"><div class="marco"><img src="img/banner-entreno.jpg" alt="Juan David en entrenamiento con el balón" width="900" height="900"></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="controles">
+      <button class="flecha" type="button" id="anterior" aria-label="Anterior">‹</button>
+      <button class="punto" type="button" aria-label="Diapositiva 1" aria-current="true"></button>
+      <button class="punto" type="button" aria-label="Diapositiva 2"></button>
+      <button class="punto" type="button" aria-label="Diapositiva 3"></button>
+      <button class="punto" type="button" aria-label="Diapositiva 4"></button>
+      <button class="flecha" type="button" id="siguiente" aria-label="Siguiente">›</button>
+    </div>
+  </div>
+
+  
+<!-- ===== INICIO sección: #datos ===== -->
+<section id="datos">
+    <div class="envoltura">
+      <h2>Datos deportivos</h2>
+      <p class="sub">Lo que un entrenador pregunta primero.</p>
+      <div class="datos-grid">
+        <dl class="tabla-datos">
+          <div class="dato"><dt>Posición</dt><dd>Defensa central <small>polivalente</small></dd></div>
+          <div class="dato"><dt>Perfil</dt><dd>Derecho</dd></div>
+          <div class="dato"><dt>Estatura</dt><dd>1,82 <small>m</small></dd></div>
+          <div class="dato"><dt>Peso</dt><dd>73 <small>kg</small></dd></div>
+          <div class="dato"><dt>Edad</dt><dd>17 <small>años · categoría 2009</small></dd></div>
+          <div class="dato"><dt>Ciudad</dt><dd>Bogotá</dd></div>
+          <div class="dato"><dt>Club actual</dt><dd>PSG Juan XXIII <small>+100 partidos</small></dd></div>
+          <div class="dato"><dt>Experiencia</dt><dd>Yumbo F.C. <small>7 meses</small></dd></div>
+        </dl>
+        <figure class="cancha-caja">
+          <svg class="cancha" viewBox="0 0 300 200" role="img" aria-label="Cancha con la posición de defensa central marcada">
+            <rect x="0" y="0" width="300" height="200" fill="var(--cesped)"/>
+            <g fill="none" stroke="rgba(255,255,255,.55)" stroke-width="1.5">
+              <rect x="6" y="6" width="288" height="188"/>
+              <line x1="150" y1="6" x2="150" y2="194"/>
+              <circle cx="150" cy="100" r="26"/>
+              <rect x="6" y="52" width="44" height="96"/>
+              <rect x="6" y="78" width="15" height="44"/>
+              <rect x="250" y="52" width="44" height="96"/>
+              <rect x="279" y="78" width="15" height="44"/>
+            </g>
+            <circle cx="72" cy="100" r="15" fill="var(--oro)" opacity=".25"/>
+            <circle cx="72" cy="100" r="10" fill="var(--oro)"/>
+            <text x="72" y="104" text-anchor="middle" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-weight="700" font-size="10" fill="var(--noche)">JD</text>
+            <text x="72" y="130" text-anchor="middle" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-weight="600" font-size="11" letter-spacing="1.5" fill="#fff">CENTRAL</text>
+            <!-- posiciones secundarias: el equipo ataca hacia la derecha, su banda derecha queda abajo -->
+            <circle cx="92" cy="168" r="8" fill="none" stroke="var(--oro-claro)" stroke-width="2"/>
+            <text x="108" y="172" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-weight="600" font-size="10" letter-spacing="1" fill="rgba(255,255,255,.85)">LATERAL DER.</text>
+            <circle cx="110" cy="100" r="8" fill="none" stroke="var(--oro-claro)" stroke-width="2"/>
+            <text x="110" y="84" text-anchor="middle" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-weight="600" font-size="10" letter-spacing="1" fill="rgba(255,255,255,.85)">VOLANTE</text>
+          </svg>
+          <figcaption><b>Principal:</b> defensa central · <b>Polivalente:</b> también lateral derecho y volante (marca y creación)</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+<!-- ===== FIN sección: #datos ===== -->
+
+
+  
+<!-- ===== INICIO sección: #fortalezas ===== -->
+<section id="fortalezas">
+    <div class="envoltura">
+      <h2>Fortalezas</h2>
+      <p class="sub">Lo que aporta en la cancha. Es defensa, pero también cobra y hace goles.</p>
+      <ul class="fortalezas">
+        <li class="especial"><b>Balón parado</b><span>Cobra los tiros libres de su equipo.</span></li>
+        <li class="especial"><b>Llegada al gol</b><span>Anota de cabeza y desde fuera del área.</span></li>
+        <li class="especial"><b>Polivalente</b><span>Juega de central, lateral derecho y volante, tanto de marca como de creación. Se adapta a lo que necesite el equipo.</span></li>
+        <li><b>Velocidad</b><span>Cubre la espalda de la línea y llega a los cruces.</span></li>
+        <li><b>Fortaleza física</b><span>Gana los duelos cuerpo a cuerpo.</span></li>
+        <li><b>Salida con balón</b><span>Arranca el juego desde atrás con el balón al pie.</span></li>
+        <li><b>Pase largo</b><span>Cambia de frente y busca a los delanteros con pases largos.</span></li>
+        <li><b>Lectura del juego</b><span>Se anticipa y corta las jugadas antes de que lleguen al área.</span></li>
+      </ul>
+    </div>
+  </section>
+<!-- ===== FIN sección: #fortalezas ===== -->
+
+
+  
+<!-- ===== INICIO sección: #trayectoria ===== -->
+<section id="trayectoria">
+    <div class="envoltura">
+      <h2>Trayectoria</h2>
+      <p class="sub">Empezó a jugar hace ocho años en el Club Deportivo PSG Juan XXIII, con los profesores Alexander Castañeda y Johana Pérez. Allí aprendió disciplina, responsabilidad y a luchar por sus sueños. Su mayor motivación es su mamá.</p>
+      <div class="tabla-scroll">
+        <table class="clubes">
+          <thead><tr><th scope="col">Club</th><th scope="col">Tiempo</th><th scope="col" class="num">Partidos</th></tr></thead>
+          <tbody>
+            <tr><td>Club Deportivo PSG Juan XXIII <span class="pill">Actual</span></td><td>8 años</td><td class="num">+100</td></tr>
+            <tr><td>Yumbo F.C.<br><small class="nota-club">Divisiones menores (Valle del Cauca) · debutó como titular · Torneo Sub 16</small></td><td>7 meses</td><td class="num">4</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="otros">También jugó la <b>Copa Capital</b> y el <b>Torneo Sub 16</b> con Yumbo F.C.</p>
+    </div>
+  </section>
+<!-- ===== FIN sección: #trayectoria ===== -->
+
+
+  
+<!-- ===== INICIO sección: #logros ===== -->
+<section id="logros">
+    <div class="envoltura">
+      <h2>Logros</h2>
+      <div class="resumen-titulos"><b>5</b><span>títulos · 3 internacionales</span></div>
+      <div class="logros">
+        <figure class="logro-card">
+          <img src="img/titulo-arrayanes-2025.jpg" alt="Equipo de PSG Juan XXIII con el tercer puesto del Torneo Arrayanes 2025" loading="lazy" width="900" height="896">
+          <figcaption><span class="logro-eti">3.er puesto · 2025</span><b>Torneo Arrayanes</b><span>Festival Interescuelas · Clausura 2025</span></figcaption>
+        </figure>
+        <figure class="logro-card campeon">
+          <img src="img/titulo-ecuador.jpg" alt="Juan David con el trofeo de campeón en Ecuador" loading="lazy" width="497" height="740">
+          <figcaption><span class="logro-eti">Campeón · 2024</span><b>Torneo en Ecuador</b><span>Internacional · con PSG Juan XXIII</span></figcaption>
+        </figure>
+        <figure class="logro-card campeon">
+          <img src="img/titulo-liga.jpg" alt="Juan David con el trofeo de campeón de la Liga de Bogotá junto a sus profesores" loading="lazy" width="531" height="712">
+          <figcaption><span class="logro-eti">Campeón · 2024</span><b>Liga de Bogotá</b><span>Categoría 2006, jugando con mayores</span></figcaption>
+        </figure>
+        <figure class="logro-card campeon">
+          <img src="img/titulo-arrayanes-2024.jpg" alt="Juan David besando el trofeo de campeón del Torneo Arrayanes" loading="lazy" width="531" height="712">
+          <figcaption><span class="logro-eti">Campeón · 2024</span><b>Torneo Arrayanes</b><span>Con PSG Juan XXIII</span></figcaption>
+        </figure>
+        <figure class="logro-card campeon">
+          <img src="img/titulo-sinfronteras.jpg" alt="Juan David abrazando a un compañero con el trofeo del Torneo Fútbol Sin Fronteras" loading="lazy" width="532" height="712">
+          <figcaption><span class="logro-eti">Campeón · 2023</span><b>Fútbol Sin Fronteras</b><span>Internacional · en Colombia, con equipos de México</span></figcaption>
+        </figure>
+        <figure class="logro-card campeon">
+          <img src="img/titulo-peru.jpg" alt="Juan David con el trofeo y la bandera de Colombia en Perú" loading="lazy" width="533" height="712">
+          <figcaption><span class="logro-eti">Campeón · 2023</span><b>Torneo en Perú</b><span>Internacional · con PSG Juan XXIII</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+<!-- ===== FIN sección: #logros ===== -->
+
+
+  
+<!-- ===== INICIO sección: #prensa ===== -->
+<section id="prensa">
+    <div class="envoltura">
+      <h2>En los medios</h2>
+      <p class="sub">Lo que se ha escrito sobre él.</p>
+      <article class="prensa">
+        <div style="min-width:0">
+          <p class="prensa-medio">Garrapatudo.com · 1 de abril de 2025</p>
+          <h3>Juan David Suárez: la promesa del fútbol juvenil colombiano</h3>
+          <p>El artículo cuenta su formación en PSG Juan XXIII, el título de la Liga de Bogotá y su llegada a las divisiones menores de Yumbo F.C., donde debutó como titular.</p>
+        </div>
+        <a class="boton" href="https://garrapatudo.com/2025/04/01/juan-david-suarez-la-promesa-del-futbol-juvenil-colombiano/" target="_blank" rel="noopener">Leer artículo</a>
+      </article>
+    </div>
+  </section>
+<!-- ===== FIN sección: #prensa ===== -->
+
+
+  
+<!-- ===== INICIO sección: #video ===== -->
+<section id="video">
+    <div class="envoltura">
+      <h2>Video de jugadas</h2>
+      <p class="sub">Doce jugadas de partido: recuperación, conducción, goles, tiros libres y salida con balón. Al comienzo de cada una, un círculo dorado muestra dónde está Juan David.</p>
+      <div class="video-marco">
+        <video controls playsinline preload="metadata" poster="img/video-portada.jpg">
+          <source src="video/jugadas.mp4" type="video/mp4">
+          Tu navegador no puede mostrar el video.
+        </video>
+      </div>
+      <p class="nota-video">Duración: 2 min 32 s · con música.</p>
+    </div>
+  </section>
+<!-- ===== FIN sección: #video ===== -->
+
+
+  
+<!-- ===== INICIO sección: #gimnasio ===== -->
+<section id="gimnasio">
+    <div class="envoltura">
+      <h2>Preparación física</h2>
+      <p class="sub">Su trabajo en el gimnasio: fuerza, pesas y ejercicios con balón.</p>
+      <div class="gym">
+        <a class="gym-card" data-yt="4Ry2pfXyDT4" href="https://youtu.be/4Ry2pfXyDT4" target="_blank" rel="noopener"><span class="gym-play" aria-hidden="true"></span><b>Pesas</b><span>Ver en YouTube</span></a>
+        <a class="gym-card" data-yt="PeKqOogDBXg" href="https://youtu.be/PeKqOogDBXg" target="_blank" rel="noopener"><span class="gym-play" aria-hidden="true"></span><b>Gimnasio</b><span>Ver en YouTube</span></a>
+        <a class="gym-card" data-yt="xnxhQrGEfAI" href="https://youtu.be/xnxhQrGEfAI" target="_blank" rel="noopener"><span class="gym-play" aria-hidden="true"></span><b>Bíceps</b><span>Ver en YouTube</span></a>
+        <a class="gym-card" data-yt="9j2M33th-tQ" href="https://youtu.be/9j2M33th-tQ" target="_blank" rel="noopener"><span class="gym-play" aria-hidden="true"></span><b>Tríceps</b><span>Ver en YouTube</span></a>
+        <a class="gym-card" data-yt="LCkB-egF1bk" href="https://youtu.be/LCkB-egF1bk" target="_blank" rel="noopener"><span class="gym-play" aria-hidden="true"></span><b>Entrenando</b><span>Ver en YouTube</span></a>
+        <a class="gym-card" data-yt="5yi-Qr65byA" href="https://youtu.be/5yi-Qr65byA" target="_blank" rel="noopener"><span class="gym-play" aria-hidden="true"></span><b>Fútbol</b><span>Ver en YouTube</span></a>
+        <a class="gym-card" data-yt="dEqjZbJtTW0" href="https://youtu.be/dEqjZbJtTW0" target="_blank" rel="noopener"><span class="gym-play" aria-hidden="true"></span><b>Juan</b><span>Ver en YouTube</span></a>
+      </div>
+    </div>
+  </section>
+<!-- ===== FIN sección: #gimnasio ===== -->
+
+
+  
+<!-- ===== INICIO sección: #fotos ===== -->
+<section id="fotos">
+    <div class="envoltura">
+      <h2>Fotos</h2>
+      <p class="sub">Momentos, entrenamiento y partidos.</p>
+      <h3 class="galeria-titulo">Momentos</h3>
+      <div class="galeria momentos">
+        <figure><img src="img/momento-libertadores.jpg" alt="Juan David junto al trofeo de la Copa Libertadores Sub 20 en Ecuador" loading="lazy" width="534" height="616"></figure>
+        <figure><img src="img/momento-medalla-3.jpg" alt="Juan David con trofeo y medalla en el uniforme rosado" loading="lazy" width="533" height="712"></figure>
+        <figure><img src="img/momento-idv.jpg" alt="Juan David en la visita a Independiente del Valle en Ecuador" loading="lazy" width="512" height="680"></figure>
+        <figure><img src="img/momento-medalla.jpg" alt="Juan David con medalla y trofeo de PSG Juan XXIII" loading="lazy" width="320" height="712"></figure>
+        <figure><img src="img/momento-profesional.jpg" alt="Juan David con un jugador profesional" loading="lazy" width="534" height="616"></figure>
+        <figure><img src="img/momento-medalla-4.jpg" alt="Juan David con trofeo y medalla junto a sus compañeros" loading="lazy" width="533" height="712"></figure>
+        <figure><img src="img/momento-yumbo.jpg" alt="Juan David con el uniforme de Yumbo F.C." loading="lazy" width="383" height="708"></figure>
+        <figure><img src="img/momento-medalla-2.jpg" alt="Juan David con su medalla de campeón en el uniforme amarillo" loading="lazy" width="529" height="638"></figure>
+        <figure><img src="img/momento-trofeo-profe.jpg" alt="Juan David con un trofeo en el uniforme rosado" loading="lazy" width="534" height="616"></figure>
+        <figure><img src="img/momento-aeropuerto.jpg" alt="Juan David en el aeropuerto rumbo al torneo en Ecuador" loading="lazy" width="712" height="710"></figure>
+        <figure><img src="img/momento-ecuador.jpg" alt="Juan David en Ecuador" loading="lazy" width="532" height="614"></figure>
+        <figure><img src="img/momento-companeros.jpg" alt="Juan David con sus compañeros de equipo" loading="lazy" width="900" height="602"></figure>
+      </div>
+      <h3 class="galeria-titulo">Entrenamiento</h3>
+      <div class="galeria cuadrada">
+        <figure><img src="img/entreno-conduccion.jpg" alt="Juan David conduciendo el balón en entrenamiento" loading="lazy" width="800" height="800"><figcaption>Conducción</figcaption></figure>
+        <figure><img src="img/entreno-golpeo.jpg" alt="Juan David pateando en entrenamiento" loading="lazy" width="800" height="800"><figcaption>Golpeo</figcaption></figure>
+        <figure><img src="img/entreno-conos.jpg" alt="Juan David en ejercicio de conos" loading="lazy" width="800" height="800"><figcaption>Agilidad</figcaption></figure>
+        <figure><img src="img/entreno-fuerza.jpg" alt="Juan David en ejercicio de fuerza" loading="lazy" width="800" height="800"><figcaption>Fuerza</figcaption></figure>
+        <figure><img src="img/entreno-control.jpg" alt="Juan David controlando el balón" loading="lazy" width="800" height="800"><figcaption>Control</figcaption></figure>
+        <figure><img src="img/entreno-cambio.jpg" alt="Juan David cambiando de dirección con el balón" loading="lazy" width="800" height="800"><figcaption>Cambio de ritmo</figcaption></figure>
+        <figure><img src="img/entreno-amague.jpg" alt="Juan David haciendo un amague con el balón" loading="lazy" width="800" height="800"><figcaption>Técnica</figcaption></figure>
+        <figure><img src="img/entreno-retrato.jpg" alt="Retrato de Juan David en entrenamiento" loading="lazy" width="800" height="1120"><figcaption>Concentración</figcaption></figure>
+      </div>
+      <h3 class="galeria-titulo">Partido</h3>
+      <div class="galeria">
+        <figure><img src="img/pase-largo.jpg" alt="Juan David dando un pase largo" loading="lazy" width="900" height="1125"><figcaption>Pase largo</figcaption></figure>
+        <figure><img src="img/barrida.jpg" alt="Juan David barriéndose para quitar el balón" loading="lazy" width="900" height="1125"><figcaption>Barrida</figcaption></figure>
+        <figure><img src="img/conduccion.jpg" alt="Juan David conduciendo el balón" loading="lazy" width="900" height="1125"><figcaption>Conducción</figcaption></figure>
+        <figure><img src="img/duelo.jpg" alt="Juan David en un duelo por el balón" loading="lazy" width="900" height="1125"><figcaption>Duelo</figcaption></figure>
+        <figure><img src="img/remate.jpg" alt="Juan David pateando el balón" loading="lazy" width="900" height="1125"><figcaption>Golpeo</figcaption></figure>
+        <figure><img src="img/carrera.jpg" alt="Juan David corriendo hacia el balón" loading="lazy" width="900" height="1125"><figcaption>Velocidad</figcaption></figure>
+        <figure><img src="img/marca.jpg" alt="Juan David marcando a un rival" loading="lazy" width="900" height="1125"><figcaption>Marca</figcaption></figure>
+        <figure><img src="img/anticipo.jpg" alt="Juan David protegiendo el balón ante un rival" loading="lazy" width="900" height="1125"><figcaption>Protección</figcaption></figure>
+        <figure><img src="img/salida.jpg" alt="Juan David saliendo con el balón" loading="lazy" width="900" height="1125"><figcaption>Salida con balón</figcaption></figure>
+        <figure><img src="img/golpeo.jpg" alt="Juan David pateando con la derecha" loading="lazy" width="900" height="1125"><figcaption>Pierna derecha</figcaption></figure>
+        <figure><img src="img/banda.jpg" alt="Juan David con el balón cerca de la banda" loading="lazy" width="900" height="1125"><figcaption>Control</figcaption></figure>
+        <figure><img src="img/retrato.jpg" alt="Retrato de Juan David en la cancha" loading="lazy" width="900" height="1125"><figcaption>PSG Juan XXIII</figcaption></figure>
+      </div>
+    </div>
+  </section>
+<!-- ===== FIN sección: #fotos ===== -->
+
+
+  
+<!-- ===== INICIO sección: #ficha ===== -->
+<section id="ficha">
+    <div class="envoltura">
+      <h2>Ficha técnica</h2>
+      <p class="sub">Toque una ficha para verla en tamaño completo, o descárguela en PDF.</p>
+      <div class="fichas">
+        <div>
+          <a href="img/ficha-amarilla.jpg" target="_blank" rel="noopener"><img src="img/ficha-amarilla.jpg" alt="Ficha técnica de Juan David con uniforme amarillo" loading="lazy" width="1080" height="1350"></a>
+          <a href="pdf/ficha-juan-david-amarilla.pdf" target="_blank" rel="noopener"><span>Descargar PDF · amarilla</span></a>
+        </div>
+        <div>
+          <a href="img/ficha-rosada.jpg" target="_blank" rel="noopener"><img src="img/ficha-rosada.jpg" alt="Ficha técnica de Juan David con uniforme rosado" loading="lazy" width="1080" height="1350"></a>
+          <a href="pdf/ficha-juan-david-rosada.pdf" target="_blank" rel="noopener"><span>Descargar PDF · rosada</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- ===== FIN sección: #ficha ===== -->
+
+
+  
+<!-- ===== INICIO sección: #contacto ===== -->
+<section id="contacto" class="contacto">
+    <div class="envoltura">
+      <h2>Contacto deportivo</h2>
+      <p class="sub">Para pruebas, convocatorias o información sobre Juan David. Es menor de edad: el contacto lo atiende su familia. <b class="disponible">Disponible para pruebas.</b></p>
+      <dl class="contactos">
+        <div class="contacto-item">
+          <dt>Contacto y representante familiar · Stefannie Castillo</dt>
+          <dd><span class="valor" id="tel">320 422 5131</span></dd>
+          <dd><a class="boton lleno" href="https://wa.me/573204225131" target="_blank" rel="noopener">WhatsApp</a></dd>
+        </div>
+        <div class="contacto-item">
+          <dt>Correo deportivo</dt>
+          <dd><span class="valor" id="correo">juandsuarezfutbol@gmail.com</span></dd>
+          <dd><button class="boton" type="button" id="copiar">Copiar correo</button></dd>
+        </div>
+        <div class="contacto-item">
+          <dt>Instagram</dt>
+          <dd class="con-foto"><img class="avatar" src="img/perfil.jpg" alt="" width="56" height="56"><span class="valor">@soyjuansuarez05</span></dd>
+          <dd><a class="boton" href="https://www.instagram.com/soyjuansuarez05/" target="_blank" rel="noopener">Ver Instagram</a></dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+<!-- ===== FIN sección: #contacto ===== -->
+
+</main>
+<!-- ===== FIN sección: #inicio ===== -->
+
+
+
+<!-- ===== INICIO sección: <footer> ===== -->
+<footer>
+  <div class="envoltura">
+    <span>Juan David Suárez Aza · Defensa central · Bogotá</span>
+    <span>Disciplina · Trabajo · Evolución</span>
+  </div>
+</footer>
+<!-- ===== FIN sección: <footer> ===== -->
+
+
+
+<!-- ===== INICIO lógica JavaScript n.º 1 (PÁGINA WEB JUAN DAVID SUÁREZ AZA (perfil deportivo)) ===== -->
+<script>
+// ===== INICIO bloque JS n.º 1 =====
+
+/* Banner: pasa solo cada 7 segundos; se detiene con el mouse encima o si la persona prefiere menos movimiento */
+(function () {
+  var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+  var puntos = Array.prototype.slice.call(document.querySelectorAll('.punto'));
+  var actual = 0, timer = null;
+  var quieto = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function ir(n) {
+    actual = (n + slides.length) % slides.length;
+    slides.forEach(function (s, i) { s.classList.toggle('activa', i === actual); });
+    puntos.forEach(function (p, i) { p.setAttribute('aria-current', i === actual ? 'true' : 'false'); });
+  }
+  function arrancar() { if (!quieto) { parar(); timer = setInterval(function () { ir(actual + 1); }, 7000); } }
+  function parar() { if (timer) clearInterval(timer); timer = null; }
+  puntos.forEach(function (p, i) { p.addEventListener('click', function () { ir(i); arrancar(); }); });
+  document.getElementById('anterior').addEventListener('click', function () { ir(actual - 1); arrancar(); });
+  document.getElementById('siguiente').addEventListener('click', function () { ir(actual + 1); arrancar(); });
+  var b = document.querySelector('.banner');
+  b.addEventListener('mouseenter', parar); b.addEventListener('mouseleave', arrancar);
+  b.addEventListener('focusin', parar); b.addEventListener('focusout', arrancar);
+  arrancar();
+})();
+
+/* En la página publicada (Netlify) los videos del gimnasio se ven dentro de la página */
+if (/netlify\.app$/.test(location.hostname)) {
+  document.querySelectorAll('.gym-card').forEach(function (a) {
+    var f = document.createElement('figure'); f.className = 'gym-video';
+    var i = document.createElement('iframe');
+    i.src = 'https://www.youtube-nocookie.com/embed/' + a.dataset.yt;
+    i.title = a.querySelector('b').textContent; i.loading = 'lazy'; i.allowFullscreen = true;
+    i.setAttribute('allow', 'accelerometer; encrypted-media; gyroscope; picture-in-picture');
+    var c = document.createElement('figcaption'); c.textContent = i.title;
+    f.appendChild(i); f.appendChild(c); a.replaceWith(f);
+  });
+  document.querySelector('.gym').style.gridTemplateColumns = 'repeat(auto-fill, minmax(300px, 1fr))';
+}
+
+document.getElementById('copiar').addEventListener('click', function () {
+  var b = this, texto = document.getElementById('correo').textContent.trim();
+  function listo() { b.textContent = 'Copiado'; setTimeout(function () { b.textContent = 'Copiar correo'; }, 1800); }
+  function seleccionar() {
+    /* si no se puede copiar, deja el correo seleccionado */
+    var r = document.createRange(); r.selectNodeContents(document.getElementById('correo'));
+    var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+    b.textContent = 'Seleccionado';
+  }
+  try { navigator.clipboard.writeText(texto).then(listo, seleccionar); } catch (e) { seleccionar(); }
+});
+
+// ===== FIN bloque JS n.º 1 =====
+</script>
+<!-- ===== FIN lógica JavaScript n.º 1 ===== -->
+
+
+</body></html>

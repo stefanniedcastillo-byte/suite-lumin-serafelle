@@ -1,0 +1,654 @@
+<!doctype html>
+<!--
+  =====================================================================
+  PÁGINA WEB LUMIN SERAFELLE (catálogo y pedidos)
+  Exportado de Claude el 14 de noviembre de 2026 para alojarlo por tu cuenta (Netlify).
+  ---------------------------------------------------------------------
+  QUÉ ES: catálogo de regalos personalizados con bandeja de pedido que envía el resumen por WhatsApp.
+  CÓMO ESTÁ ORGANIZADO este archivo (busca estas marcas con Ctrl+F):
+   - "INICIO bloque de estilos CSS"  -> todo el diseño (colores, tipografías, tamaños)
+   - "INICIO sección: ..."            -> cada parte visible de la página
+   - "INICIO lógica JavaScript"       -> el funcionamiento (botones, cálculos, guardado)
+   - "INICIO sección JS: ..."         -> subpartes dentro del JavaScript
+  NOTAS PARA QUIEN LO EDITE (persona o IA):
+   - Es una página con carpetas: index.html + img/ (fotos) + fonts/ (tipografía propia). Sube la CARPETA COMPLETA a Netlify.
+   - No funciona si solo subes index.html: las fotos están en img/ y la letra de la marca en fonts/.
+   - Los productos, precios y textos están en el JavaScript (busca "INICIO sección JS").
+   - Los enlaces de WhatsApp e Instagram están en el HTML (busca wa.me e instagram.com).
+   - Para agregar un producto: sube la foto a img/ y agrega el producto en la lista del JavaScript.
+  =====================================================================
+-->
+<html lang="es"><head><meta charset="utf-8"><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover">
+<!-- ===== INICIO bloque de estilos CSS n.º 1 (PÁGINA WEB LUMIN SERAFELLE (catálogo y pedidos)) ===== -->
+<style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
+<!-- ===== FIN bloque de estilos CSS n.º 1 ===== -->
+<title>Lumin Serafelle · Regalos personalizados</title></head><body>
+
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<meta name="theme-color" content="#01273E">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Lumin Serafelle">
+<meta property="og:title" content="Lumin Serafelle · Regalos personalizados hechos a mano">
+<meta property="og:description" content="Camisetas, mugs, agendas, Biblias, manillas y más, personalizados en Bogotá. Envíos a toda Colombia.">
+<meta property="og:image" content="https://luminserafelle.netlify.app/img/og.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:url" content="https://luminserafelle.netlify.app/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="description" content="Regalos personalizados hechos a mano en Bogotá: camisetas, mugs, agendas, Biblias, manillas y más. Envíos a toda Colombia.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Cinzel:wght@500;600&family=Figtree:wght@400;500;600;700&family=Pinyon+Script&display=swap">
+
+<!-- ===== INICIO bloque de estilos CSS n.º 2 (PÁGINA WEB LUMIN SERAFELLE (catálogo y pedidos)) ===== -->
+<style>
+@font-face{font-family:"Lumin Serafelle Script";src:url("fonts/lumin-serafelle-script.woff?v=2") format("woff"),url("fonts/lumin-serafelle-script.ttf?v=2") format("truetype");font-display:swap}
+/* Layout: navy-and-gold atelier catalog matching the Instagram feed; product photo areas stay light — logo-led hero, serif display, gold hairlines, product "fichas" on near-black */
+:root{
+  --paper:#01273E;--card:#062F4A;--ink:#F3EBDD;--muted:#A3B6C3;--line:#17425F;
+  --plum:#C9A75E;--plum-ink:#15110A;--lilac:#04304C;--sun:#C9A75E;--sun-ink:#15110A;--gold-soft:#E4CD92;
+  --t-textil:#EFE9DE;--t-mugs:#EFE9DE;--t-papeleria:#EFE9DE;--t-manillas:#EFE9DE;--t-detalles:#EFE9DE;--t-3d:#E6E2DA;--photo-ink:#8A6A27;
+  --good:#9FD3B0;--shadow:0 1px 2px rgba(0,10,20,.4),0 14px 34px rgba(0,10,20,.35);
+  --display:"Cormorant Garamond","Iowan Old Style","Palatino Linotype",Georgia,serif;
+  --caps:"Cinzel","Trajan Pro","Cormorant Garamond",Georgia,serif;
+  --body:"Figtree",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --brand:"Lumin Serafelle Script","Pinyon Script",cursive;
+  --hand:"Pinyon Script","Snell Roundhand","Segoe Script",cursive;
+  color-scheme:dark;
+}
+.light{}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--display);margin:0;text-wrap:balance;letter-spacing:-.005em;line-height:1.05;font-weight:600}
+p{margin:0}
+a{color:inherit}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--plum);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1160px;margin:0 auto;padding-inline:20px}
+.num{font-variant-numeric:tabular-nums}
+.hand{font-family:var(--hand);font-weight:700}
+
+/* ===== INICIO estilos: header ===== */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:color-mix(in srgb,var(--paper) 90%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:18px;padding-block:12px}
+.logo{display:flex;flex-direction:column;line-height:1;text-decoration:none;margin-right:auto}
+.logo{flex-direction:row!important;align-items:center;gap:10px}.logo img{width:34px;height:auto;border-radius:6px}.logo b{font-family:var(--caps);font-weight:500;font-size:17px;letter-spacing:.22em;color:var(--plum)}.logo .lt{display:flex;flex-direction:column}
+.logo span{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-top:4px}
+.menu{display:flex;gap:18px;font-weight:600;font-size:15px}
+.menu a{text-decoration:none;color:var(--muted)}.menu a:hover{color:var(--ink)}
+.tray-btn{white-space:nowrap;flex:none;display:inline-flex;align-items:center;gap:8px;border:1px solid var(--plum);background:transparent;color:var(--plum);padding:9px 14px;border-radius:2px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;font-size:12.5px;cursor:pointer;text-decoration:none}
+.tray-btn .n{background:var(--plum);color:var(--plum-ink);min-width:22px;height:22px;border-radius:11px;display:inline-grid;place-items:center;font-size:12.5px;padding:0 6px}
+@media (max-width:860px){.menu{display:none}}
+@media (max-width:420px){.logo b{font-size:13px;letter-spacing:.14em}.logo .lt>span{display:none}.tray-btn{padding:8px 12px;font-size:14px}}
+.soon[hidden],.soon:empty{display:none!important}.soon{margin-top:18px;display:flex;gap:14px;align-items:center;flex-wrap:wrap;border:1px dashed var(--line);border-radius:4px;padding:14px 18px;color:var(--muted)}.soon svg{width:34px;height:34px;color:var(--plum);flex:none}.soon b{color:var(--ink)}
+.soon .soon-img{width:min(100%,260px);aspect-ratio:1/1;border-radius:4px;overflow:hidden;flex:none;border:1px solid var(--line);padding:0;cursor:zoom-in;background:none}.soon .soon-img img{width:100%;height:100%;object-fit:cover;display:block}.soon .soon-tx{flex:1;min-width:200px;display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+
+/* ===== INICIO estilos: hero ===== */
+.hero{padding-block:56px 40px}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:40px;align-items:center}
+@media (max-width:860px){.hero .wrap{grid-template-columns:minmax(0,1fr)}.hero{padding-block:32px 24px}}
+.eyebrow{display:inline-flex;gap:10px;align-items:center;font-family:var(--caps);font-size:12.5px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--plum)}
+.eyebrow i{width:28px;height:1px;background:var(--plum);display:inline-block}
+.hero h1{font-size:clamp(42px,7vw,80px);font-weight:600;margin-top:14px}
+.hero h1 em{font-style:italic;color:var(--plum)}
+.hero .lema{font-family:var(--brand);font-size:clamp(30px,4.8vw,52px);line-height:1.3;color:var(--gold-soft);margin-top:14px;display:inline-block;font-weight:400;font-feature-settings:"ss01"}
+.firma{font-family:var(--brand);font-feature-settings:"ss01";font-weight:400;color:var(--gold-soft);font-size:34px;line-height:1.3;display:block;margin:10px 0 4px}
+.hero p.sub{font-size:18px;color:var(--muted);max-width:52ch;margin-top:16px}
+.ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:2px;padding:12px 22px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;font-size:13.5px;text-decoration:none;cursor:pointer;border:1px solid var(--plum);color:var(--plum);background:transparent;min-height:46px}
+.btn.solid{background:var(--plum);color:var(--plum-ink);border-color:var(--plum)}
+.btn.sun{background:var(--sun);color:var(--sun-ink);border-color:var(--sun)}
+.btn.sm{padding:8px 14px;min-height:38px;font-size:12.5px}
+.btn:hover{filter:brightness(1.06)}
+.facts{display:flex;gap:22px;flex-wrap:wrap;margin-top:28px;color:var(--muted);font-size:14.5px}
+.facts b{color:var(--plum);font-family:var(--display);font-size:24px;display:block;font-weight:600}
+
+.hero-logo{position:relative;display:grid;place-items:center}.hero-logo img{width:min(100%,440px);height:auto;border-radius:50%;box-shadow:0 0 0 1px color-mix(in srgb,var(--plum) 40%,transparent),0 0 90px color-mix(in srgb,var(--plum) 18%,transparent)}
+@media (max-width:860px){.hero-logo{order:-1}.hero-logo img{width:min(72%,300px)}}
+.collage{display:none}
+.collage .tile{aspect-ratio:1;border-radius:22px;display:grid;place-items:center;position:relative;max-width:100%}
+.collage .tile:nth-child(2){transform:translateY(22px)}
+.collage .tile:nth-child(5){transform:translateY(22px)}
+.collage .tile svg{width:46%;height:46%;color:var(--ink);opacity:.85}
+.sticker{position:absolute;font-family:var(--hand);font-weight:700;font-size:19px;background:var(--sun);color:var(--sun-ink);padding:2px 10px;border-radius:8px;box-shadow:var(--shadow);white-space:nowrap}
+
+/* ===== INICIO estilos: season ===== */
+.season{background:linear-gradient(90deg,#8E6E2E,var(--plum) 50%,#8E6E2E);color:var(--plum-ink)}
+.season .wrap{display:flex;gap:16px;align-items:center;justify-content:space-between;flex-wrap:wrap;padding-block:16px}
+.season p{font-weight:600}.season p b{font-family:var(--display);font-size:24px;margin-right:10px;font-weight:700}
+.season .btn{border-color:currentColor;color:inherit;background:transparent}
+
+section.block{padding-block:64px}
+.sec-h{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:24px}
+.sec-h h2{font-size:clamp(34px,4.8vw,52px);font-weight:600}
+.sec-h h2::after{content:"";display:block;width:56px;height:1px;background:var(--plum);margin-top:14px}
+.sec-h p{color:var(--muted);max-width:56ch;margin-top:8px}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{border:1px solid var(--line);background:transparent;padding:8px 14px;border-radius:2px;font-weight:500;cursor:pointer;font-size:13.5px;letter-spacing:.04em;color:var(--muted)}
+.chip[aria-pressed="true"]{background:transparent;color:var(--plum);border-color:var(--plum)}
+
+/* ===== INICIO estilos: catalog ===== */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,260px),1fr));gap:18px}
+.prod{background:var(--card);border:1px solid var(--line);border-radius:4px;overflow:hidden;display:flex;flex-direction:column}
+.prod:hover{border-color:color-mix(in srgb,var(--plum) 55%,var(--line))}
+.art{aspect-ratio:4/3;display:grid;place-items:center;position:relative;max-width:100%}
+.art{border-bottom:1px solid var(--line);background-image:radial-gradient(circle at 50% 55%,color-mix(in srgb,var(--plum) 10%,transparent),transparent 62%)}
+.art svg{width:30%;height:auto;max-height:48%;color:var(--photo-ink);opacity:.9}
+.art .tag{position:absolute;top:12px;left:12px;font-family:var(--caps);font-size:10.5px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:#5E5444;padding:4px 0}
+.art .tag.new{background:var(--photo-ink);color:#FFFFFF;left:auto;right:12px;padding:4px 10px;border-radius:2px}
+.prod .body{padding:16px 18px 18px;display:flex;flex-direction:column;gap:10px;flex:1}
+.prod h3{font-size:25px;font-weight:600}
+.prod .d{color:var(--muted);font-size:14.5px;flex:1}
+.prod .row{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.price{font-family:var(--display);font-weight:600;font-size:24px;color:var(--plum)}
+.price small{font-family:var(--body);font-weight:600;font-size:12.5px;color:var(--muted);display:block;letter-spacing:.04em;text-transform:uppercase}
+.prod select{width:100%;border:1px solid var(--line);border-radius:2px;padding:9px 10px;background:var(--paper);min-height:42px;color:var(--ink)}
+
+/* ===== INICIO estilos: kits ===== */
+.kits{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,250px),1fr));gap:18px}
+.kit{border-radius:4px;padding:24px;background:var(--lilac);border:1px solid color-mix(in srgb,var(--plum) 35%,var(--line));display:flex;flex-direction:column;gap:12px;position:relative}
+.kit h3{font-size:28px;font-weight:600}
+.kit ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:4px;flex:1}
+.kit .price{font-size:26px}
+.kit li::marker{color:var(--plum)}
+
+/* ===== INICIO estilos: steps ===== */
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:18px;counter-reset:s}
+.step{border-top:1px solid var(--plum);padding-top:14px;display:flex;flex-direction:column;gap:6px}
+.step::before{counter-increment:s;content:counter(s,upper-roman);font-family:var(--caps);font-weight:500;font-size:22px;letter-spacing:.1em;line-height:1;color:var(--plum)}
+.step h3{font-size:26px}
+.step p{color:var(--muted);font-size:15px}
+
+/* ===== INICIO estilos: pay + business ===== */
+.duo{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:18px}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:4px;padding:24px;display:flex;flex-direction:column;gap:14px}
+.panel h3{font-size:30px;font-weight:600}
+.payrow{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding:12px 14px;border-radius:2px;background:var(--paper);border:1px solid var(--line)}
+.payrow span{font-size:13px;color:var(--muted);display:block;letter-spacing:.04em;text-transform:uppercase;font-weight:700}
+.payrow b{font-family:var(--display);font-size:26px;letter-spacing:.04em;user-select:all;color:var(--plum)}
+.tiers{display:flex;gap:10px;flex-wrap:wrap}
+.tier{flex:1;min-width:110px;border-radius:2px;padding:12px;background:var(--paper);border:1px solid var(--line)}
+.tier b{font-family:var(--display);font-size:32px;display:block;color:var(--plum);font-weight:600}
+.tier span{font-size:14px;color:var(--muted)}
+
+/* ===== INICIO estilos: faq ===== */
+.faq{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:12px 28px}
+details{border-bottom:1px solid var(--line);padding-block:14px}
+summary{cursor:pointer;font-family:var(--display);font-weight:600;font-size:22px;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-family:var(--display);font-size:22px;line-height:1;color:var(--plum)}
+details[open] summary::after{content:"–"}
+details p{color:var(--muted);margin-top:8px;max-width:62ch}
+
+/* ===== INICIO estilos: order tray ===== */
+.order{background:var(--card);border:1px solid color-mix(in srgb,var(--plum) 35%,var(--line));border-radius:4px;padding:24px;box-shadow:var(--shadow)}
+.order-grid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);gap:24px}
+@media (max-width:860px){.order-grid{grid-template-columns:minmax(0,1fr)}}
+.line{border:1px solid var(--line);border-radius:4px;padding:14px;display:flex;flex-direction:column;gap:10px;background:var(--paper)}
+.line-h{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+.line-h b{font-family:var(--display);font-size:22px;font-weight:600}
+.line .fields{display:grid;grid-template-columns:minmax(0,1fr) 110px;gap:10px}
+@media (max-width:480px){.line .fields{grid-template-columns:minmax(0,1fr)}}
+label.f{display:flex;flex-direction:column;gap:5px;font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);min-width:0}
+input[type=text],input[type=number],select,textarea{border:1px solid var(--line);border-radius:2px;padding:9px 11px;background:var(--card);min-height:42px;width:100%;min-width:0;text-transform:none;letter-spacing:0;font-weight:500;color:var(--ink)}
+textarea{min-height:64px;resize:vertical}
+.adic{display:flex;flex-wrap:wrap;gap:6px}
+.adic label{display:inline-flex;gap:6px;align-items:center;border:1px solid var(--line);border-radius:2px;padding:5px 10px;font-size:13.5px;cursor:pointer;background:var(--card)}
+.adic input{accent-color:var(--plum)}
+.x{border:0;background:transparent;color:var(--muted);font-size:22px;line-height:1;cursor:pointer;padding:2px 6px;border-radius:8px}
+.x:hover{color:var(--ink);background:var(--lilac)}
+.sum{display:flex;flex-direction:column;gap:12px;position:sticky;top:calc(env(safe-area-inset-top,0px) + 84px);align-self:start}
+.sum .tot{display:flex;justify-content:space-between;align-items:baseline;border-top:1px solid var(--plum);padding-top:12px}
+.sum .tot b{font-family:var(--display);font-size:36px;color:var(--plum);font-weight:600}
+.muted{color:var(--muted);font-size:14px}
+.empty{border:1px dashed var(--line);border-radius:4px;padding:26px;text-align:center;color:var(--muted)}
+.wa-num{font-family:var(--display);font-weight:700;user-select:all}
+
+footer{border-top:1px solid var(--line);padding-block:36px 156px;margin-top:20px}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;color:var(--muted);font-size:14.5px}
+footer b{color:var(--plum);font-family:var(--caps);font-weight:500;letter-spacing:.2em;font-size:16px}
+footer .marca{font-size:clamp(24px,3.4vw,36px);letter-spacing:.18em;line-height:1.1;display:block}
+footer .contacto{display:flex;flex-direction:column;gap:6px;align-items:flex-start}
+footer .contacto .lbl{font-family:var(--caps);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+footer .tel{display:inline-flex;align-items:center;gap:10px;font-family:var(--display);font-weight:600;font-size:clamp(28px,3.6vw,38px);line-height:1;color:var(--ink);text-decoration:none;font-variant-numeric:lining-nums tabular-nums;letter-spacing:.02em}
+footer .tel svg{width:.8em;height:.8em;color:var(--plum);flex:none}
+footer .tel:hover{color:var(--gold-soft)}
+
+/* Netlify pone su sello "Powered by Netlify" abajo a la derecha (64 px de alto): el botón de WhatsApp y los avisos van por encima */
+.toast{position:fixed;left:50%;bottom:calc(84px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--plum);color:var(--plum-ink);padding:10px 16px;border-radius:999px;z-index:60;font-weight:600;max-width:calc(100% - 32px);box-shadow:var(--shadow)}
+@media (prefers-reduced-motion:no-preference){.prod,.kit{transition:transform .2s}.prod:hover,.kit:hover{transform:translateY(-3px)}}
+
+.art.ph{background:#E4E4E4;cursor:zoom-in;padding:0;border:0;width:100%;display:block;aspect-ratio:1/1;overflow:hidden}
+.art.ph img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
+.prod:hover .art.ph img{transform:scale(1.03)}
+.art.ph .tag{background:rgba(1,39,62,.82);color:#F3EBDD;padding:4px 9px;border-radius:2px}
+.art.ph .cnt{position:absolute;right:10px;bottom:10px;background:rgba(1,39,62,.82);color:#F3EBDD;font-size:12px;padding:3px 8px;border-radius:2px;font-family:var(--caps);letter-spacing:.08em}
+.kit .kimg{margin:-24px -24px 4px;aspect-ratio:4/3;overflow:hidden;cursor:zoom-in;border:0;padding:0;display:block;width:calc(100% + 48px);background:#EFE9DE}
+.kit .kimg img{width:100%;height:100%;object-fit:cover;display:block}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(46%,220px),1fr));gap:10px}
+.gal button{aspect-ratio:1/1;padding:0;border:1px solid var(--line);border-radius:3px;overflow:hidden;cursor:zoom-in;background:#EFE9DE}
+.gal img{width:100%;height:100%;object-fit:cover;display:block}
+.lb{position:fixed;inset:0;background:rgba(0,12,20,.94);z-index:90;display:grid;place-items:center;padding:56px 12px 70px}
+.lb[hidden]{display:none}
+.lb img{max-width:min(100%,960px);max-height:100%;object-fit:contain;border-radius:3px}
+.lb button{position:absolute;background:rgba(1,39,62,.9);color:#F3EBDD;border:1px solid #C9A75E;border-radius:50%;width:46px;height:46px;font-size:24px;line-height:1;cursor:pointer}
+.lb .x{top:12px;right:12px}.lb .pv{left:12px;top:50%;transform:translateY(-50%)}.lb .nx{right:12px;top:50%;transform:translateY(-50%)}
+.lb .ct{position:absolute;bottom:22px;left:0;right:0;text-align:center;color:#E4CD92;font-family:var(--caps);letter-spacing:.14em;font-size:12px}
+#galMas[hidden]{display:none!important}
+
+.wa-float{position:fixed;right:max(16px,env(safe-area-inset-right,0px));bottom:calc(80px + env(safe-area-inset-bottom,0px));z-index:60;width:58px;height:58px;border-radius:50%;background:var(--plum);color:var(--plum-ink);display:grid;place-items:center;box-shadow:0 6px 20px rgba(0,10,20,.45);border:1px solid var(--gold-soft);text-decoration:none}
+.wa-float svg{width:30px;height:30px}
+.wa-float:hover{transform:translateY(-2px)}
+.wa-float:focus-visible{outline:2px solid var(--gold-soft);outline-offset:3px}
+.legal-note{font-size:12.5px;line-height:1.45}
+
+/* banners: carrusel de portada (el primero es la bienvenida; los demás, campañas con fotos en abanico) */
+.bn{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+.bn-track{display:flex;transition:transform .7s cubic-bezier(.6,.05,.25,1)}
+@media (prefers-reduced-motion:reduce){.bn-track{transition:none}}
+.bn-slide{flex:0 0 100%;min-width:0;display:flex;align-items:center;background:radial-gradient(ellipse at 75% 50%,#0A3D5E 0%,var(--paper) 62%)}
+.bn-slide>.wrap{width:100%}
+.bn-slide.hero{padding-block:44px 60px}
+.bn-slide.hero h1{font-size:clamp(40px,5.4vw,66px)}
+.bn-slide.hero .lema{font-size:clamp(28px,3.4vw,40px)}
+.bn-slide.hero .hero-logo img{width:min(100%,360px)}
+.bn-slide.hero .facts{margin-top:22px}
+.bn-in{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:28px;align-items:center;padding-block:44px 64px}
+.bn-in h2{font-size:clamp(38px,5.4vw,64px);font-weight:600;margin-top:14px;line-height:1.02}
+.bn-in h2 em{font-style:italic;color:var(--plum)}
+.bn-in .lema{font-family:var(--brand);font-feature-settings:"ss01";font-size:clamp(26px,3.2vw,36px);line-height:1.25;color:var(--gold-soft);display:block;margin-top:6px}
+.bn-in p{max-width:42ch;margin-top:12px;color:var(--muted);font-size:17px}
+.bn-in .btn{margin-top:22px}
+.fan{position:relative;height:420px;width:100%;max-width:470px;margin-inline:auto}
+.fan img{position:absolute;object-fit:cover;border:5px solid var(--ink);box-shadow:0 14px 34px rgba(0,10,20,.5);background:var(--card)}
+.fan img:nth-child(1){width:33%;height:78%;left:0;top:13%;transform:rotate(-4deg)}
+.fan img:nth-child(2){width:36%;height:94%;left:32%;top:2%;z-index:2;transform:rotate(1deg)}
+.fan img:nth-child(3){width:33%;height:78%;right:0;top:13%;transform:rotate(4deg)}
+.fan.two img:nth-child(1){width:57%;height:60%;left:0;top:20%;transform:rotate(-3deg)}
+.fan.two img:nth-child(2){width:40%;height:92%;right:0;top:4%;transform:rotate(3deg)}
+.fan.sq img:nth-child(1){width:31%;height:80%;top:10%}
+.fan.sq img:nth-child(2){width:auto;height:76%;aspect-ratio:1;left:50%;top:8%;transform:translateX(-50%) rotate(1deg)}
+.fan.sq img:nth-child(3){width:31%;height:80%;top:10%}
+.fan.fit img{object-fit:contain;background:#EFE9DE}
+.fan .sello{position:absolute;z-index:4;right:0;bottom:4px;background:var(--plum);color:var(--plum-ink);font-family:var(--display);font-weight:600;font-size:18px;padding:6px 14px;transform:rotate(-3deg)}
+.bn-arrow{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;border:1px solid color-mix(in srgb,var(--gold-soft) 50%,transparent);background:color-mix(in srgb,var(--paper) 65%,transparent);color:var(--gold-soft);font-size:24px;line-height:1;cursor:pointer;display:grid;place-items:center;z-index:3}
+.bn-arrow.prev{left:10px}.bn-arrow.next{right:10px}
+.bn-dots{position:absolute;left:0;right:0;bottom:18px;display:flex;justify-content:center;gap:8px;z-index:3}
+.bn-dots button{width:28px;height:3px;border:0;padding:0;background:color-mix(in srgb,var(--gold-soft) 35%,transparent);cursor:pointer}
+.bn-dots button[aria-current="true"]{background:var(--plum)}
+@media (max-width:1240px){.bn-slide>.wrap{padding-inline:64px}}
+@media (max-width:860px){
+  .bn-slide.hero{padding-block:28px 52px}
+  .bn-slide.hero .hero-logo{display:none}
+  .bn-slide.hero .sub{font-size:16px}
+  .bn-in{grid-template-columns:minmax(0,1fr);gap:10px;padding-block:22px 52px}
+  .fan{height:260px;order:-1;max-width:290px}
+  .bn-arrow{display:none}
+  .bn-slide>.wrap{padding-inline:20px}
+}
+</style>
+<!-- ===== FIN bloque de estilos CSS n.º 2 ===== -->
+
+
+<!-- ===== INICIO sección: .top ===== -->
+<header class="top">
+ <div class="wrap">
+  <a class="logo" href="#inicio"><img src="data:image/jpeg;base64,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" alt=""><span class="lt"><b>LUMIN SERAFELLE</b><span>Laboratorio de Ideas</span></span></a>
+  
+<!-- ===== INICIO sección: .menu ===== -->
+<nav class="menu" aria-label="Secciones"><a href="#catalogo">Catálogo</a><a href="#kits">Kits</a><a href="#como">Cómo pedir</a><a href="#pagos">Pagos</a><a href="#preguntas">Preguntas</a></nav>
+<!-- ===== FIN sección: .menu ===== -->
+
+  <a class="tray-btn" href="#pedido">Mi pedido <span class="n num" id="cartN">0</span></a>
+ </div>
+</header>
+<!-- ===== FIN sección: .top ===== -->
+
+
+
+<!-- ===== INICIO sección: #inicio ===== -->
+<main id="inicio">
+ 
+<!-- ===== INICIO sección: #banners ===== -->
+<section class="bn" id="banners" aria-roledescription="carrusel" aria-label="Novedades">
+ <div class="bn-track">
+ <div class="bn-slide hero" role="group" aria-roledescription="banner" aria-label="1 de 6">
+  <div class="wrap">
+   <div>
+    <span class="eyebrow"><i></i>Bogotá · envíos a toda Colombia</span>
+    <h1>Regalos que llevan <em>tu nombre</em>, hechos para ti.</h1>
+    <span class="lema">donde el alma del lujo cobra forma</span>
+    <p class="sub">Camisetas, mugs, agendas, Biblias, manillas tejidas y más, personalizados en nuestro taller. Tú pones la idea; nosotras la diseñamos, la producimos y te la enviamos.</p>
+    <div class="ctas"><a class="btn solid" href="#catalogo">Ver catálogo</a><a class="btn" href="#pedido">Arma tu pedido</a></div>
+    <div class="facts"><div><b>Todo lo que imaginas</b>en un solo lugar</div><div><b>Desde 1 unidad</b>sin mínimos</div><div><b>Hasta 12 %</b>de descuento por cantidad</div></div>
+   </div>
+   <div class="hero-logo"><img src="data:image/jpeg;base64,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" alt="Logo de Lumin Serafelle: monograma LS en dorado"></div><div id="collage" hidden></div>
+  </div>
+ </div>
+ <div class="bn-slide" role="group" aria-roledescription="banner" aria-label="2 de 6"><div class="wrap bn-in">
+  <div><span class="eyebrow"><i></i>Nuevo · Impresión 3D</span><h2>Ideas que <em>toman forma</em></h2><span class="lema">diseñadas e impresas para ti</span><p>Llaveros con tu nombre, figuras articuladas y detalles impresos en 3D, en los colores que tú escojas. Escríbenos por WhatsApp y cotiza tu pieza.</p><a class="btn solid" href="https://wa.me/573204225131?text=Hola%20Lumin%20Serafelle%2C%20quiero%20cotizar%20una%20pieza%20en%20impresi%C3%B3n%203D" target="_blank" rel="noopener">Cotiza por WhatsApp</a></div>
+  <div class="fan"><img src="img/3d-banner-figuras.jpg" alt="Pulpo, ajolote y dinosaurio articulados impresos en 3D"><img src="img/3d-banner-nombres.jpg" alt="Llaveros con nombre, letras con resina y serpiente articulada impresos en 3D"><img src="img/3d-banner-llaveros.jpg" alt="Llaveros de zorro, ardilla, corazón, estrella, nube y huellita impresos en 3D"><span class="sello">En el color que quieras</span></div>
+ </div></div>
+ <div class="bn-slide" role="group" aria-roledescription="banner" aria-label="3 de 6"><div class="wrap bn-in">
+  <div><span class="eyebrow"><i></i>Temporada de diciembre</span><h2>Navidad con <em>tu nombre</em></h2><span class="lema">regalos para toda la familia</span><p>Camisetas, mugs y kits navideños personalizados. Pide con tiempo y te lo enviamos a toda Colombia.</p><a class="btn solid" href="#catalogo" data-filtro="textil">Ver regalos de Navidad</a></div>
+  <div class="fan"><img src="img/sub-feliz-navidad.jpg" alt="Camiseta Feliz Navidad personalizada"><img src="img/sub-navidad-colombia.jpg" alt="Camisetas navideñas personalizadas"><img src="img/kit-mug-termo-2.jpg" alt="Kit de mug y termo personalizados"><span class="sello">Desde 1 unidad</span></div>
+ </div></div>
+ <div class="bn-slide" role="group" aria-roledescription="banner" aria-label="4 de 6"><div class="wrap bn-in">
+  <div><span class="eyebrow"><i></i>Planners 2027</span><h2>Tu 2027 <em>empieza aquí</em></h2><span class="lema">organiza tu año con estilo</span><p>Planners y agendas con tu nombre y tu diseño. Reserva el tuyo antes de diciembre.</p><a class="btn solid" href="#catalogo" data-filtro="papeleria">Ver planners</a></div>
+  <div class="fan sq"><img src="img/planner-2027.jpg" alt="Planners 2027 personalizados"><img src="img/banner-enero-2027.webp" alt="Página de enero 2027 de nuestra agenda"><img src="img/agenda-2026.jpg" alt="Agenda personalizada"><span class="sello">Reserva antes de diciembre</span></div>
+ </div></div>
+ <div class="bn-slide" role="group" aria-roledescription="banner" aria-label="5 de 6"><div class="wrap bn-in">
+  <div><span class="eyebrow"><i></i>Kits de regalo</span><h2>Kits listos <em>para regalar</em></h2><span class="lema">tú pones la idea</span><p>Mug, termo, cuaderno o devocional en una caja armada con su nombre. Ideal para cumpleaños y fin de año.</p><a class="btn solid" href="#kits">Ver kits</a></div>
+  <div class="fan"><img src="img/kit-devocional.jpg" alt="Kit devocional personalizado"><img src="img/kit-planner-mug.jpg" alt="Kit de planner y mug"><img src="img/mug-coleccion.jpg" alt="Mugs personalizados"><span class="sello">Hasta 12 % por cantidad</span></div>
+ </div></div>
+ <div class="bn-slide" role="group" aria-roledescription="banner" aria-label="6 de 6"><div class="wrap bn-in">
+  <div><span class="eyebrow"><i></i>Hecho a mano</span><h2>Manillas <em>tejidas</em></h2><span class="lema">detalles que se quedan contigo</span><p>Oro laminado 18K, rodio y piedra natural, tejidas una por una en nuestro taller.</p><a class="btn solid" href="#catalogo" data-filtro="manillas">Ver manillas</a></div>
+  <div class="fan two"><img src="img/rodio-taller.jpg" alt="Manillas tejidas en el taller"><img src="img/oro18-1.jpg" alt="Manillas con dije en oro 18K"></div>
+ </div></div>
+ </div>
+ <button class="bn-arrow prev" type="button" aria-label="Banner anterior">‹</button><button class="bn-arrow next" type="button" aria-label="Banner siguiente">›</button>
+ <div class="bn-dots"></div>
+ </section>
+<!-- ===== FIN sección: #banners ===== -->
+
+
+ <div class="light">
+ 
+<!-- ===== INICIO sección: #catalogo ===== -->
+<section class="block" id="catalogo">
+  <div class="wrap">
+   <div class="sec-h"><div><h2>Catálogo</h2><p><b>Todos los precios son "desde"</b>: corresponden a la versión más sencilla de cada producto. Como cada pieza es personalizada, el valor final depende de lo que quieras incluir: tamaño del diseño, técnica, materiales, dije, extras y cantidad. Te lo confirmamos antes de producir. Los precios no incluyen envío.</p></div>
+    <div class="chips" id="filtros" role="group" aria-label="Filtrar por línea"></div></div>
+   <div class="grid" id="grid"></div>
+   <div class="soon" id="soon"></div>
+  </div>
+ </section>
+<!-- ===== FIN sección: #catalogo ===== -->
+
+
+ 
+<!-- ===== INICIO sección: #kits ===== -->
+<section class="block" id="kits" style="padding-top:0">
+  <div class="wrap">
+   <div class="sec-h"><div><h2>Kits para regalar</h2><p>Combinaciones listas para sorprender. Todo va con el mismo diseño y en caja de regalo.</p></div></div>
+   <div class="kits" id="kitsGrid"></div>
+  </div>
+ </section>
+<!-- ===== FIN sección: #kits ===== -->
+
+
+ 
+<!-- ===== INICIO sección: #pedido ===== -->
+<section class="block" id="pedido" style="padding-top:0">
+  <div class="wrap">
+   <div class="order">
+    <div class="sec-h" style="margin-bottom:16px"><div><h2>Arma tu pedido</h2><p>Escoge tipo, cantidad y extras. Al final nos lo envías por WhatsApp y te respondemos con la cotización exacta.</p></div></div>
+    <div class="order-grid">
+     <div id="lines" style="display:flex;flex-direction:column;gap:12px"></div>
+     
+<!-- ===== INICIO sección: .sum ===== -->
+<aside class="sum" aria-label="Resumen del pedido">
+      <label class="f" for="cNombre">Tu nombre<input type="text" id="cNombre" autocomplete="name" placeholder="¿Cómo te llamas?"></label>
+      <label class="f" for="cCiudad">Ciudad de entrega<input type="text" id="cCiudad" placeholder="Bogotá, Medellín…"></label>
+      <label class="f" for="cFecha">¿Para cuándo lo necesitas?<input type="text" id="cFecha" placeholder="Ej.: antes del 20 de octubre"></label>
+      <div class="tot"><span class="muted">Total aproximado<br><small>sin envío</small></span><b class="num" id="total">$0</b></div>
+      <p class="muted" id="totNote">Agrega productos del catálogo o un kit.</p>
+      <a class="btn sun" id="sendWa" href="#" target="_blank" rel="noopener">Enviar pedido por WhatsApp</a>
+      <button class="btn sm" id="copyBtn" type="button">Copiar pedido</button>
+      <p class="muted">Se abre el chat con <span class="wa-num">320 422 5131</span> y tu pedido ya escrito. Si no se abre, copia el pedido y pégalo en WhatsApp.</p>
+      <p class="muted legal-note">Al enviar tu pedido aceptas que usemos tus datos solo para prepararlo y entregarlo (Ley 1581 de 2012). Por ser productos personalizados, no hay cambios por gusto; sí respondemos por defectos de fabricación. Los precios no incluyen envío: lo paga el cliente según la ciudad.</p>
+     </aside>
+<!-- ===== FIN sección: .sum ===== -->
+
+    </div>
+   </div>
+  </div>
+ </section>
+<!-- ===== FIN sección: #pedido ===== -->
+
+
+ 
+<!-- ===== INICIO sección: #como ===== -->
+<section class="block" id="como" style="padding-top:0">
+  <div class="wrap">
+   <div class="sec-h"><div><h2>Cómo pedir</h2></div></div>
+   <div class="steps">
+    <div class="step"><h3>Arma tu pedido</h3><p>Escoge productos y cuéntanos tu idea: nombres, colores, fotos o frases.</p></div>
+    <div class="step"><h3>Te cotizamos</h3><p>Te respondemos por WhatsApp con el precio exacto y una idea del diseño. Para confirmar, respondes ACEPTO.</p></div>
+    <div class="step"><h3>Pagas el anticipo</h3><p>Con el 50 % empezamos. El saldo lo pagas cuando tu pedido esté listo.</p></div>
+    <div class="step"><h3>Lo hacemos y lo enviamos</h3><p>Producimos en nuestro taller en Bogotá y te lo enviamos a cualquier ciudad de Colombia. El envío va por cuenta del cliente y su valor depende de la ciudad; en Bogotá también puedes recoger.</p></div>
+   </div>
+  </div>
+ </section>
+<!-- ===== FIN sección: #como ===== -->
+
+
+ 
+<!-- ===== INICIO sección: #pagos ===== -->
+<section class="block" id="pagos" style="padding-top:0">
+  <div class="wrap duo">
+   <div class="panel">
+    <h3>Formas de pago</h3>
+    <p class="muted">Todas las cuentas están a nombre de <b>Lumin Serafelle</b>. Verifica el nombre antes de pagar.</p>
+    <div class="payrow"><div><span>Nequi</span><b class="num">350 788 5726</b></div><button class="btn sm" type="button" data-copy="3507885726">Copiar</button></div>
+    <div class="payrow"><div><span>Llave Bre-B · desde cualquier banco</span><b class="num">0093433330</b></div><button class="btn sm" type="button" data-copy="0093433330">Copiar</button></div>
+    <p class="muted">También te enviamos el código QR por WhatsApp. Después de pagar, mándanos el comprobante.</p>
+   </div>
+   <div class="panel">
+    <h3>Para empresas y eventos</h3>
+    <p class="muted">Dotación, regalos corporativos, recordatorios de bautizo, primera comunión, grados y fin de año. Entre más unidades, mejor precio.</p>
+    <div class="tiers"><div class="tier"><b>5 %</b><span>desde 12 unidades</span></div><div class="tier"><b>8 %</b><span>desde 24 unidades</span></div><div class="tier"><b>12 %</b><span>desde 50 unidades</span></div></div>
+    <a class="btn solid sm" id="empresaWa" href="#" target="_blank" rel="noopener">Cotizar para mi empresa</a>
+   </div>
+  </div>
+ </section>
+<!-- ===== FIN sección: #pagos ===== -->
+
+
+ 
+<!-- ===== INICIO sección: #galeria ===== -->
+<section class="block" id="galeria" style="padding-top:0">
+  <div class="wrap"><div class="sec-h"><div><h2>Así convertimos ideas en piezas únicas</h2></div></div><p class="muted" style="margin:-6px 0 16px">Algunos pedidos que hemos hecho. Hay más en Instagram.</p><div class="gal" id="gal"></div><div style="text-align:center;margin-top:18px"><button class="btn sm" type="button" id="galMas" hidden>Ver más trabajos</button></div></div>
+ </section>
+<!-- ===== FIN sección: #galeria ===== -->
+
+
+ 
+<!-- ===== INICIO sección: #preguntas ===== -->
+<section class="block" id="preguntas" style="padding-top:0">
+  <div class="wrap">
+   <div class="sec-h"><div><h2>Preguntas frecuentes</h2></div></div>
+   <div class="faq">
+    <details><summary>¿Cuánto se demora mi pedido?</summary><p>Entre 5 y 8 días hábiles después del anticipo, según el producto y la cantidad. Agendas ilustradas y pedidos grandes pueden tomar un poco más; te confirmamos la fecha al cotizar.</p></details>
+    <details><summary>¿Hacen envíos? ¿Cuánto cuestan?</summary><p>Sí, a toda Colombia por transportadora. <b>El envío no está incluido en los precios y lo paga el cliente.</b> Su valor depende de la ciudad, el tamaño y el peso del paquete; te lo confirmamos en la cotización antes de que pagues. En Bogotá también puedes recoger tu pedido sin costo.</p></details>
+    <details><summary>¿Puedo pedir una sola unidad?</summary><p>Claro. No hay mínimos. Desde 12 unidades del mismo producto tienes descuento.</p></details>
+    <details><summary>¿Cómo les envío mi diseño o foto?</summary><p>Por WhatsApp, en la mejor calidad que tengas. Si no tienes diseño, lo creamos contigo: cuéntanos la idea, los colores y los nombres.</p></details>
+    <details><summary>¿Por qué el precio es "desde"?</summary><p>Porque cada pieza es personalizada. El precio cambia con el tamaño del diseño, la técnica, los extras y, en manillas, con el dije y el precio del oro o la plata. Siempre te damos el valor exacto antes de empezar.</p></details>
+    <details><summary>¿Tienen cambios o garantía?</summary><p>Antes de producir te enviamos el diseño para que lo apruebes; desde ese momento no hacemos cambios de diseño. Como cada pieza es personalizada, no tiene cambio ni devolución por gusto o talla elegida. Si llega con un defecto de fabricación (estampado despegado, impresión corrida, pieza rota en el empaque), escríbenos dentro de los 5 días siguientes a la entrega con fotos y lo reponemos sin costo. El desgaste por uso, lavado o cuidado incorrecto no está cubierto.</p></details>
+    <details><summary>¿Qué hacen con mis datos?</summary><p>Solo usamos tu nombre, teléfono y dirección para preparar y entregar tu pedido. No los compartimos ni los vendemos. Si quieres que los borremos, escríbenos por WhatsApp. (Ley 1581 de 2012, protección de datos personales.)</p></details>
+    <details><summary>¿Cómo cuido mi producto?</summary><p>Prendas: lavar al revés, en agua fría y sin planchar sobre el estampado. Mugs y termos: lavar a mano. Manillas: evita perfumes y agua con cloro.</p></details>
+   </div>
+  </div>
+ </section>
+<!-- ===== FIN sección: #preguntas ===== -->
+
+</div>
+</main>
+<!-- ===== FIN sección: #inicio ===== -->
+
+
+
+<!-- ===== INICIO sección: <footer> ===== -->
+<footer>
+ <div class="wrap">
+  <div><b class="marca">LUMIN SERAFELLE</b><p class="firma">donde el alma del lujo cobra forma</p><p>Laboratorio de Ideas · ¡La mente es tu límite!</p></div>
+  <div class="contacto"><span class="lbl">Escríbenos por WhatsApp</span><a class="tel" id="footTel" href="https://wa.me/573204225131" target="_blank" rel="noopener"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 4a12 12 0 0 0-10.4 18L4 28l6.2-1.6A12 12 0 1 0 16 4z"/></svg>320 422 5131</a><p style="margin-top:6px"><a href="https://www.instagram.com/luminserafelle/" target="_blank" rel="noopener">Instagram @luminserafelle</a></p><p>Bogotá · envíos a toda Colombia</p></div>
+ </div>
+</footer>
+<!-- ===== FIN sección: <footer> ===== -->
+
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Fotos"><img id="lbImg" alt=""><button class="x" type="button" data-lbx aria-label="Cerrar">×</button><button class="pv" type="button" data-lbm="-1" aria-label="Anterior">‹</button><button class="nx" type="button" data-lbm="1" aria-label="Siguiente">›</button><div class="ct" id="lbCt"></div></div>
+<a class="wa-float" id="waFloat" href="https://wa.me/573204225131" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 4a12 12 0 0 0-10.4 18L4 28l6.2-1.6A12 12 0 1 0 16 4z"/><path d="M11.5 11.2c.3-.7.7-.8 1.1-.8h.7c.2 0 .5.1.6.5l.9 2.2c.1.3 0 .5-.1.7l-.6.8c-.2.2-.2.4 0 .7.8 1.4 2 2.5 3.4 3.2.3.1.5.1.7-.1l.8-.9c.2-.3.5-.3.8-.2l2.1 1c.3.1.5.4.4.7-.1.9-.7 2-1.9 2.2-1 .2-2.6 0-5-1.4-2.6-1.6-4.1-4.2-4.3-5.6-.2-1.3.2-2.4.4-3z" fill="currentColor" stroke="none"/></svg></a>
+<div class="toast" id="toast" hidden></div>
+
+<!-- ===== INICIO lógica JavaScript n.º 1 (PÁGINA WEB LUMIN SERAFELLE (catálogo y pedidos)) ===== -->
+<script>
+// ===== INICIO bloque JS n.º 1 =====
+
+(function(){
+"use strict";
+const DATA={"prods": [{"id": "cam-poli", "l": "textil", "n": "Camiseta para sublimar", "d": "Poliéster: piel de durazno o seda fría. Colores vivos que no se sienten al tacto. Ideal para fotos y diseños a todo color.", "v": [{"n": "Piel de durazno adulto", "p": 27000}, {"n": "Seda fría adulto", "p": 30000}, {"n": "Oversize seda fría", "p": 55000}, {"n": "Oversize piel de durazno", "p": 55000}, {"n": "Piel de durazno niño", "p": 25000}, {"n": "Seda fría niño", "p": 27000}], "ph": "Pecho, espalda, frase, foto…", "img": ["img/sub-navidad-colombia.jpg", "img/sub-feliz-navidad.jpg", "img/sub-proyecto-1.jpg", "img/sub-proyecto-2.jpg", "img/camisetas-sublimacion-3.jpg", "img/camisetas-sublimacion-5.jpg", "img/camisetas-sublimacion-4.jpg", "img/camisetas-sublimacion-2.jpg"]}, {"id": "cam-alg", "l": "textil", "n": "Camiseta en algodón", "d": "Estampado en DTF o vinilo sobre algodón de varios pesos, de la básica a la drop terry de 350 g.", "v": [{"n": "Poly algodón adulto", "p": 34000}, {"n": "Algodón 180 g regular", "p": 45000}, {"n": "Algodón regular fit 230 g", "p": 61000}, {"n": "Algodón oversize 230 g", "p": 75000}, {"n": "Algodón básica 330 g", "p": 82000}, {"n": "Drop terry peruano 350 g", "p": 88000}, {"n": "Niño algodón", "p": 44000}], "ph": "Color de la camiseta, talla y diseño", "img": ["img/camiseta-arcoiris.jpg", "img/camiseta-velosa.jpg", "img/camiseta-anime-negra.jpg", "img/camiseta-anime-roja.jpg", "img/camiseta-algodon-4.jpg", "img/camiseta-algodon-3.jpg", "img/camiseta-algodon-1.jpg", "img/camiseta-algodon-2.jpg"]}, {"id": "buzo", "l": "textil", "n": "Buzo personalizado", "d": "Con capota o cuello redondo, básico de 260 g o premium de 300 g.", "v": [{"n": "Cuello redondo básico 260 g", "p": 86000}, {"n": "Capota básico 260 g", "p": 92000}, {"n": "Cuello redondo premium 300 g", "p": 112000}, {"n": "Capota premium 300 g", "p": 125000}, {"n": "Capota niño 260 g", "p": 84000}], "ph": "Color, talla y diseño", "img": ["img/buzo-personalizado-1.jpg", "img/buzo-personalizado-4.jpg", "img/buzo-personalizado-3.jpg", "img/buzo-personalizado-2.jpg"]}, {"id": "chaqueta", "l": "textil", "n": "Chaqueta personalizada", "d": "Estampada o pintada a mano; la espalda es el lienzo perfecto. Puedes traer tu chaqueta y la personalizamos, o te la vendemos lista con tu diseño.", "v": [{"n": "Chaqueta básica 260 g + estampado", "p": 97000}, {"n": "Chaqueta premium 300 g + estampado", "p": 136000}, {"n": "Traes tu chaqueta, la estampamos", "p": null}], "ph": "Color, talla y diseño", "img": ["img/chaqueta-leon.jpg", "img/chaqueta-espalda.jpg", "img/chaqueta-dreams.jpg", "img/chaqueta-personalizada.jpg"]}, {"id": "gorra", "l": "textil", "n": "Gorra personalizada", "d": "Malla, camionero, acrílica, dril o premium importada.", "v": [{"n": "Malla espuma", "p": 25000}, {"n": "Acrílica 6 paneles", "p": 27000}, {"n": "Acrílica 5 paneles", "p": 30000}, {"n": "Camionero malla importada", "p": 32000}, {"n": "Dril cerrada", "p": 32000}, {"n": "Premium importada", "p": 35000}, {"n": "Premium visera plana", "p": 38000}], "ph": "Logo, nombre o frase", "img": ["img/gorras-1.jpg", "img/gorras-3.jpg"]}, {"id": "mug", "l": "mugs", "n": "Mug personalizado 11 oz", "d": "Blanco, mágico, neón, metalizado, escarchado… con tu foto o diseño alrededor.", "v": [{"n": "Blanco AAA", "p": 20000}, {"n": "Mini mug cónico", "p": 22000}, {"n": "Neón", "p": 25000}, {"n": "Opalizado", "p": 25000}, {"n": "Mágico fondo color", "p": 26000}, {"n": "Metalizado", "p": 27000}, {"n": "Escarchado", "p": 30000}, {"n": "Cerámica tapa conejo", "p": 42000}], "ph": "Foto, nombre, frase", "img": ["img/mug-2.jpg", "img/mug-coleccion.jpg", "img/mug-anime-rosa.jpg", "img/mug-anime-azul.jpg", "img/mug-cajas.jpg", "img/mug-pug.jpg", "img/mug-1.jpg"]}, {"id": "peltre", "l": "mugs", "n": "Pocillo de peltre", "d": "El clásico de peltre, en tamaño normal o mini.", "v": [{"n": "Mini 3 oz", "p": 19000}, {"n": "Mini 6 oz", "p": 22000}, {"n": "Metálico colores 11 oz", "p": 25000}, {"n": "Mágico 11 oz", "p": 27000}], "ph": "Diseño o nombre", "img": ["img/pocillo-peltre-1.jpg", "img/pocillo-peltre-2.jpg", "img/pocillo-peltre-3.jpg"]}, {"id": "termo", "l": "mugs", "n": "Termo, vaso o caramañola", "d": "Termos tapa bala, digitales con temperatura, caramañolas deportivas y vasos de cerámica.", "v": [{"n": "Caramañola tapa gris", "p": 38000}, {"n": "Vaso cerámica tapa bala", "p": 38000}, {"n": "Termo fotoluminiscente", "p": 40000}, {"n": "Caramañola deportiva", "p": 40000}, {"n": "Termo tapa bala", "p": 44000}, {"n": "Vaso cerámica tipo Starbucks", "p": 45000}, {"n": "Termo digital", "p": 49000}], "ph": "Nombre, diseño o foto", "img": ["img/carimanola-2.jpg", "img/carimanola-1.jpg", "img/carimanola-3.jpg"]}, {"id": "stanley", "l": "mugs", "n": "Vaso tipo Stanley", "d": "Con lámina DTF UV de alta duración. Temáticas o diseño a tu gusto.", "v": [{"n": "Vaso tipo Stanley con lámina", "p": 71000}], "ph": "Temática o diseño", "img": ["img/termo-stanley-3.jpg", "img/termo-stanley-2.jpg", "img/termo-stanley-1.jpg"]}, {"id": "agenda", "l": "papeleria", "n": "Agenda personalizada", "d": "Portada con tu diseño, nombre o ilustración. Media carta o carta, 100 a 150 hojas, anillada.", "v": [{"n": "Media carta, 100 hojas", "p": 59900}, {"n": "Media carta, 150 hojas", "p": 69900}, {"n": "Carta, 150 hojas", "p": 89900}], "ph": "Nombre, profesión, colores, estilo", "adic": true, "img": ["img/agenda.jpg", "img/agenda-2026.jpg", "img/agenda2026-personalizada.jpg", "img/agenda-personalizada-2.jpg", "img/agenda-personalizada.jpg", "img/agendas-2.jpg"]}, {"id": "planner", "l": "papeleria", "n": "Planner 2027", "d": "Diario y mensual para organizar tu año. Portada personalizada.", "v": [{"n": "Media carta, 250 hojas", "p": 89900}], "ph": "Nombre, colores, estilo", "adic": true, "nuevo": true, "img": ["img/planner-2027.jpg"]}, {"id": "cuaderno", "l": "papeleria", "n": "Cuaderno personalizado", "d": "Portada personalizada con tu nombre o inicial, ilustrada y con elástico. Puedes traer tu cuaderno y solo lo forramos, o te lo entregamos completo. Ideal para el colegio, la universidad o para regalar.", "v": [{"n": "Solo forrado (traes tu cuaderno)", "p": 5000}, {"n": "Cuaderno + forrado personalizado", "p": 10000}], "ph": "Nombre, inicial, colores, estilo y tamaño del cuaderno", "adic": true, "img": ["img/cuaderno-1.jpg", "img/cuaderno-personalizada.jpg", "img/cuaderno-personalizado-2.jpg"]}, {"id": "planeador", "l": "papeleria", "n": "Planeador de escritorio", "d": "Calendario de escritorio personalizado con tu nombre, tu profesión o tu ilustración. Para la oficina o el estudio.", "v": [{"n": "Planeador de escritorio", "p": 15000}], "ph": "Nombre, profesión, año y colores", "img": ["img/planeador.jpg", "img/planeador-2026.jpg"]}, {"id": "colorear", "l": "papeleria", "n": "Libro para colorear personalizado", "d": "Estilo cozy o mystery numbers, con el nombre en la portada. Papel grueso de 150 g. También tenemos libros Mystery de Disney originales.", "v": [{"n": "Cozy, 50 hojas", "p": 32000}, {"n": "Mystery numbers, 120 hojas", "p": 52000}, {"n": "Mystery Disney original (libro importado)", "p": 69900}], "ph": "Nombre y temática", "adic": true, "img": ["img/libros-cozy-1.jpg", "img/libros-cozy-paginas.jpg", "img/hojas-internas-cozy.jpg", "img/libros-coloring-girly-1.jpg", "img/book-coloring-tapa.jpg", "img/my-story-pages.jpg", "img/disney-mystery-1.jpg", "img/disney-mystery-2.jpg", "img/disney-mystery-argollado.jpg", "img/disney-mystery-lista.jpg"]}, {"id": "bebe", "l": "papeleria", "n": "Diario de bebé", "d": "Para guardar los primeros recuerdos, con monograma o ilustración.", "v": [{"n": "50 hojas", "p": 39000}], "ph": "Nombre del bebé, colores", "adic": true, "img": ["img/albun-bebe.jpg"]}, {"id": "biblia", "l": "papeleria", "n": "Biblia personalizada", "d": "Católica o Reina Valera 1960, con tapa personalizada, nombre y versículo. Esquinas metálicas y cinta separadora.", "v": [{"n": "Católica", "p": 120000}, {"n": "Reina Valera 1960", "p": 120000}], "ph": "Nombre, versículo favorito, colores", "adic": true, "img": ["img/biblia-personalizada-3.jpg", "img/biblia-personalizada.jpg", "img/biblias.jpg", "img/biblia-sagrada.jpg", "img/biblia-restaurada-1.jpg", "img/biblia-restaurada-2.jpg", "img/biblia-restaurada-3.jpg"]}, {"id": "devocionario", "l": "papeleria", "n": "Devocionarios y diarios de oración", "d": "Diarios de oración y planners devocionales argollados, devocionarios de bolsillo, libros de oraciones y novenarios para eventos y recordatorios.", "v": [{"n": "Diario de oración argollado, 80 hojas", "p": 55900}, {"n": "Novenario o triduo", "p": 15000}, {"n": "Devocionario de bolsillo", "p": 19000}, {"n": "Libro de oraciones extendido", "p": 26000}], "ph": "Nombre, fecha o intención", "img": ["img/dev-diario-oracion.jpg", "img/dev-dios-cuida.jpg", "img/dev-plan-nombre.jpg", "img/dev-valiente.jpg", "img/dev-planner-interior.jpg", "img/dev-diario-mesa.jpg"], "adic": true}, {"id": "man-tejida", "l": "manillas", "n": "Manilla tejida en oro laminado", "d": "Tejida a mano en el color de hilo que quieras, con balines en oro laminado 18k y dije a tu elección: Virgen, San Benito, corona, flor, inicial y más. El precio final depende del dije.", "v": [{"n": "Oro laminado 18k con dije", "p": 119000}], "ph": "Color del hilo y tipo de dije", "img": ["img/virgen-18-k.jpg", "img/dije-corona-azul.jpg", "img/san-benito-oro-laminado-18-k-azul.jpg", "img/dije-flor-roja.jpg", "img/manilla-oro-laminado.jpg", "img/manilla-oro-laminado-3.jpg", "img/manilla-oro-laminado-2.jpg", "img/manilla-oro-laminado-con-neopreno.jpg", "img/manilla-oro-laminado-7-chakras-piedra-natural.jpg", "img/manilla-oro-laminado-cuarzo-rosa.jpg", "img/san-benito-oro-laminado-18-k-roja.jpg", "img/tejido-rojo-18k.jpg", "img/san-benito-oro-laminado-18-k.jpg", "img/negra-18-k-tejido-sencillo.jpg"]}, {"id": "man-rodio", "l": "manillas", "n": "Manilla tejida en rodio", "d": "Tejida a mano en el color de hilo que quieras, con balines en rodio, piedras naturales o neopreno y dije a tu elección: San Benito, Sagrado Corazón, corona, infinito, Virgen y más. El precio final depende del dije.", "v": [{"n": "Rodio con dije", "p": 35000}], "ph": "Color del hilo, piedras y tipo de dije", "img": ["img/rodio-corazon.jpg", "img/rodio-corona.jpg", "img/rodio-par-rojo.jpg", "img/rodio-azul-libro.jpg", "img/rodio-azul-mano.jpg", "img/rodio-rosa.jpg", "img/rodio-infinito.jpg", "img/rodio-pantera.jpg", "img/rodio-taller.jpg", "img/7-chakras-negra-rodio.jpg", "img/7-chakras-negra-2-rodio.jpg", "img/manilla-negra-2-piedra-natural-rodio.jpg", "img/rodio-negra-v-venganza-1.jpg", "img/7-chakras-planetas-piedra.jpg"]}, {"id": "man-plata", "l": "manillas", "n": "Manilla en plata 925", "d": "Balines en plata 925. El precio depende del dije que elijas.", "v": [{"n": "Plata 925 con dije", "p": null}], "pt": "A cotizar según peso y dije", "ph": "Tipo de dije", "img": ["img/manilla-en-plata-5.jpg", "img/manilla-en-plata-4.jpg", "img/manilla-en-plata-1.jpg", "img/manilla-en-plata-3.jpg"]}, {"id": "man-escudo", "l": "manillas", "n": "Manilla con dije en oro 18k", "d": "Tejida a mano en el color de hilo que quieras, con dije en oro de 18 kilates: escudos, iniciales y más. Pieza de joyería; el precio depende del dije y del valor del oro.", "v": [{"n": "Dije en oro 18k", "p": null}], "pt": "A cotizar según peso y dije", "ph": "Color del hilo y tipo de dije", "img": ["img/oro18-1.jpg", "img/oro18-2.jpg"]}, {"id": "lamina", "l": "detalles", "n": "Lámina de aluminio", "d": "Tu foto impresa en aluminio, brillante y duradera.", "v": [{"n": "15 × 20 cm", "p": 35000}, {"n": "20 × 30 cm", "p": 48000}], "ph": "Foto", "img": ["img/lamina-trio.jpg", "img/lamina-anime.jpg", "img/laminas-sublimadas-1.jpg", "img/lamina-familia.jpg", "img/lamina-nino.jpg", "img/lamina-acabados.jpg"]}, {"id": "mousepad", "l": "detalles", "n": "Mousepad", "d": "Cuadrado, redondo o gamer de 30 × 60 cm.", "v": [{"n": "Redondo", "p": 18000}, {"n": "19 × 19 cm", "p": 20000}, {"n": "Gamer 30 × 60 cm", "p": 45000}], "ph": "Foto o diseño", "img": ["img/pad-robot.jpg", "img/pad-rock.jpg", "img/pad-anime.jpg", "img/pad-mouse-stich.jpg"]}, {"id": "bolsas", "l": "detalles", "n": "Bolsas personalizadas", "d": "Bolsas con tu diseño, nombre o logo: kraft tipo boutique (con sticker o marcadas a mano con lettering), ecológicas con apliques en foami para fiestas y temporadas, de tela, tulas y de papel. Ideales para recordatorios, sorpresas de cumpleaños, Halloween, Navidad, regalos corporativos y empaques de tu marca. Precio por unidad; entre más unidades, mejor precio.", "v": [{"n": "Kraft boutique 12 × 15 × 4 cm", "p": 4500}, {"n": "Kraft boutique 15 × 20 × 6 cm", "p": 5000}, {"n": "Kraft boutique 19 × 24 × 8 cm", "p": 5500}, {"n": "Kraft boutique 23 × 33 × 8 cm", "p": 6500}, {"n": "Kraft marcada a mano (lettering) 23 × 33 cm", "p": 13000}, {"n": "Ecológica pequeña 18 × 23 con aplique en foami", "p": 12000}, {"n": "Ecológica blanca sublimada", "p": 10000}, {"n": "Ecológica con manijas 30 × 40 con aplique en foami", "p": 15500}, {"n": "Tula 43 × 34 cm", "p": 18000}, {"n": "Bolsa de tela (tote)", "p": null}, {"n": "Bolsa de papel", "p": null}], "ph": "Tipo de bolsa, tamaño, diseño y cantidad", "img": ["img/bolsa-halloween-grupo.jpg", "img/bolsa-halloween-1.jpg", "img/bolsa-halloween-2.jpg", "img/bolsa-lettering.jpg", "img/bolsa-tela.jpg", "img/bolsa-tula.jpg"]}, {"id": "otros", "l": "detalles", "n": "Más detalles personalizados", "d": "Imanes, portavasos, tulas, bolsas ecológicas, cajas, bases de madera y lapiceros.", "v": [{"n": "Caja dos piezas", "p": 9000}, {"n": "Lapicero", "p": 10000}, {"n": "Portavaso", "p": 11000}, {"n": "Base de madera", "p": 13000}, {"n": "Imán grande", "p": 22000}], "ph": "Diseño, nombre o foto", "img": ["img/otros-productos-sublimados-5.jpg", "img/otros-productos-sublimados-4.jpg", "img/otros-productos-sublimados-2.jpg", "img/otros-productos-sublimados-1.jpg"]}, {"id": "3d", "l": "3d", "n": "Impresión 3D", "d": "Llaveros con nombre o inicial, llaveros tiernos, figuras articuladas (pulpo, ajolote, dinosaurio, serpiente, zorro) y piezas a la medida, en los colores que quieras. Cuéntanos tu idea y te cotizamos.", "v": [{"n": "Pieza a la medida", "p": null}], "ph": "Qué pieza quieres, tamaño y colores", "nuevo": true, "img": ["img/3d-llaveros-nombre-2.jpg", "img/3d-pulpo.jpg", "img/3d-llaveros-kawaii.jpg", "img/3d-letras-resina.jpg", "img/3d-dinosaurio.jpg", "img/3d-ajolote.jpg", "img/3d-zorro-ardilla.jpg", "img/3d-serpiente.jpg", "img/3d-llaveros-nombre.jpg"]}], "adic": [{"n": "Pestañas buscadoras", "p": 15000}, {"n": "Nombre en foil dorado", "p": 15000}, {"n": "Elástico clásico", "p": 10000}, {"n": "Elástico con dije", "p": 12000}, {"n": "Hoja de stickers scrapbook", "p": 18000}, {"n": "Mariposa decorativa", "p": 12000}, {"n": "Sección de fotos con dedicatoria", "p": 10000}, {"n": "Resaltadores pastel x6", "p": 22000}, {"n": "Borla en seda con dije", "p": 7000}, {"n": "Borla en gamuza con dije", "p": 7000}, {"n": "Caja de regalo", "p": 10000}, {"n": "Tarjeta dedicatoria", "p": 3000}], "kits": [{"id": "kit-pro", "n": "Kit profesional", "inc": ["Agenda personalizada media carta", "Termo tapa bala con el mismo diseño", "Lapicero personalizado", "Caja de regalo"], "p": 139900, "ph": "Nombre, profesión y colores", "img": ["img/kit-planeador-mug.jpg"]}, {"id": "kit-agenda", "n": "Box agenda de regalo", "inc": ["Agenda personalizada media carta", "Hoja de stickers", "Borla con dije", "Tarjeta dedicatoria", "Caja de regalo"], "p": 99900, "ph": "Nombre y estilo", "img": ["img/kit-planner-mug.jpg"]}, {"id": "kit-express", "n": "Detalle express", "inc": ["Mug personalizado 11 oz", "Tarjeta dedicatoria", "Caja de regalo"], "p": 39900, "ph": "Foto o frase", "img": ["img/mug-pug.jpg"]}, {"id": "kit-biblia", "n": "Biblia de regalo", "inc": ["Biblia personalizada (católica o RVR 1960)", "Pestañas buscadoras", "Nombre en foil dorado", "Resaltadores pastel"], "p": 165000, "ph": "Nombre, versículo y versión", "img": ["img/biblia-personalizada-3.jpg"]}, {"id": "kit-devocional", "n": "Kit devocional", "inc": ["Libreta devocional personalizada", "Lapicero personalizado", "Llavero con foto", "30 tarjetas de versículos"], "p": 62000, "ph": "Nombre, foto y colores", "img": ["img/kit-devocional.jpg"]}, {"id": "kit-cuaderno", "n": "Kit cuaderno + mug", "inc": ["Cuaderno personalizado", "Mug con el mismo diseño"], "p": 30000, "ph": "Nombre, profesión y estilo", "img": ["img/kit-cuaderno-mug.jpg"]}, {"id": "kit-duo", "n": "Dúo mug + termo", "inc": ["Mug personalizado 11 oz", "Termo o caramañola con el mismo diseño"], "p": 58000, "ph": "Nombres, frase o diseño", "img": ["img/kit-mug-termo-1.jpg", "img/kit-mug-termo-2.jpg"]}, {"id": "kit-padrinos", "n": "Kit para pedir padrinos (los dos)", "inc": ["2 cajas de regalo con sticker \"Entrega mágica especial\" y papel seda", "2 cartas con sus nombres y tu mensaje", "2 mugs personalizados: uno para la madrina y otro para el padrino"], "p": 50000, "ph": "Nombres de la madrina y del padrino, personaje o tema, colores y mensaje", "img": ["img/kit-padrinos-portada.jpg", "img/kit-padrinos-madrina.jpg", "img/kit-padrinos-padrino.jpg", "img/kit-padrinos-caja.jpg"]}, {"id": "kit-padrino-uno", "n": "Kit para pedir padrino o madrina (uno solo)", "inc": ["1 caja de regalo con sticker y papel seda", "1 carta con su nombre y tu mensaje", "1 mug personalizado"], "p": 30000, "ph": "Nombre de quien va a ser padrino o madrina, personaje o tema, colores y mensaje", "img": ["img/kit-padrinos-portada.jpg", "img/kit-padrinos-madrina.jpg", "img/kit-padrinos-padrino.jpg", "img/kit-padrinos-caja.jpg"]}, {"id": "kit-bebe", "n": "Kit revelación de bebé", "inc": ["Caja impresa con tu mensaje", "Body o prenda personalizada", "Detalles para la sorpresa"], "p": 50000, "ph": "Mensaje, nombres y fecha", "img": ["img/kit-revelacion-bebe.jpg"]}], "gal": ["img/chaqueta-personalizada.jpg", "img/cliente1.jpg", "img/libros-cozy-2.jpg", "img/7-chakras-y-ojo-de-tigre-1.jpg", "img/biblia-sagrada.jpg", "img/laminas-sublimadas-1.jpg", "img/ojo-turco-1-solo-piedra.jpg", "img/agendas-2.jpg", "img/kit-revelacion-bebe.jpg", "img/set-2-pulseras-cadena-acero-y-lluvia-de-plata-1.jpg", "img/gorras-3.jpg", "img/libros-coloring-girly-2.jpg", "img/manilla-piedra-obsidiana.jpg", "img/buzo-personalizado-4.jpg", "img/7-chakras-dorada.jpg", "img/agenda2026-personalizada.jpg", "img/gal-camisetas-sublimacion-6.jpg", "img/gal-7-chakras-roja-oro-18k.jpg", "img/gal-cuaderno-personalizado-3.jpg", "img/gal-mug-3.jpg", "img/gal-negra-1-piedra-natural.jpg", "img/gal-laminas-sublimadas-3.jpg", "img/gal-book-coloring-1.jpg", "img/gal-ojo-de-tigre-dorada-1.jpg", "img/gal-gorras-2.jpg", "img/gal-manilla-3-oros-negra-neopreno.jpg", "img/gal-camiseta-algodon-5.jpg", "img/gal-cuaderno-personalizado.jpg", "img/gal-7-chakras-roja.jpg", "img/gal-laminas-sublimadas-1.jpg", "img/gal-santa-fe-1-rodio.jpg", "img/gal-set-2-pulseras-cadena-acero-y-lluvia-de-plata-3.jpg", "img/gal-7-chakras-negra-3.jpg"]};
+const WA='573204225131';
+const $=(s,r=document)=>r.querySelector(s);
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const money=n=>'$'+Math.round(n).toLocaleString('es-CO');
+const LINES=[['todo','Todo'],['textil','Textil'],['mugs','Mugs y termos'],['papeleria','Agendas y papelería'],['manillas','Manillas'],['detalles','Detalles'],['3d','Impresión 3D']];
+const LN=Object.fromEntries(LINES);
+const S='fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"';
+const ICON={
+ textil:`<svg viewBox="0 0 48 48" ${S}><path d="M17 8l-9 6 4 7 4-2v21h16V19l4 2 4-7-9-6c-1 3-3.5 5-7 5s-6-2-7-5z"/></svg>`,
+ mugs:`<svg viewBox="0 0 48 48" ${S}><path d="M9 16h23v18a6 6 0 0 1-6 6H15a6 6 0 0 1-6-6z"/><path d="M32 20h4a5 5 0 0 1 0 10h-4"/><path d="M16 6c0 2 2 3 2 5M23 6c0 2 2 3 2 5"/></svg>`,
+ papeleria:`<svg viewBox="0 0 48 48" ${S}><rect x="13" y="6" width="26" height="36" rx="3"/><path d="M9 12h7M9 19h7M9 26h7M9 33h7M21 15h12M21 21h8"/></svg>`,
+ manillas:`<svg viewBox="0 0 48 48" ${S}><ellipse cx="24" cy="22" rx="15" ry="10"/><circle cx="9.5" cy="22" r="2.4"/><circle cx="38.5" cy="22" r="2.4"/><circle cx="14" cy="14.5" r="2.4"/><circle cx="34" cy="14.5" r="2.4"/><circle cx="24" cy="12" r="2.4"/><path d="M24 32v4"/><path d="M24 36l-4 4 4 4 4-4z"/></svg>`,
+ detalles:`<svg viewBox="0 0 48 48" ${S}><rect x="7" y="10" width="34" height="28" rx="3"/><path d="M11 33l9-10 6 6 4-4 7 8"/><circle cx="32" cy="18" r="3"/></svg>`,
+ '3d':`<svg viewBox="0 0 48 48" ${S}><path d="M24 6l16 9v18l-16 9-16-9V15z"/><path d="M8 15l16 9 16-9M24 24v18"/></svg>`,
+ kit:`<svg viewBox="0 0 48 48" ${S}><rect x="8" y="18" width="32" height="22" rx="2"/><path d="M6 12h36v6H6zM24 12v28M24 12c-3-6-11-6-9 0M24 12c3-6 11-6 9 0"/></svg>`
+};
+const tileBg=l=>`var(--t-${l})`;
+const ls={get(k){try{return JSON.parse(localStorage.getItem(k))}catch(e){return null}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+let cart=Array.isArray(ls.get('lumin-cart'))?ls.get('lumin-cart'):[];
+
+let filtro='todo';
+const P=Object.fromEntries(DATA.prods.map(p=>[p.id,p])),K=Object.fromEntries(DATA.kits.map(k=>[k.id,k]));
+cart=cart.filter(c=>c&&(c.t==='k'?K[c.id]:P[c.id]));
+function toast(m){const t=$('#toast');t.textContent=m;t.hidden=false;clearTimeout(toast.h);toast.h=setTimeout(()=>t.hidden=true,2600)}
+const desde=p=>{const ps=p.v.map(v=>v.p).filter(x=>x);return ps.length?Math.min(...ps):null};
+const priceHtml=(p,i)=>{const v=p.v[i]||p.v[0];if(p.pronto)return '<small>Precio</small>Muy pronto';return v&&v.p?`<small>Desde</small>${money(v.p)}`:'<small>Precio</small>'+esc(p.pt||'A cotizar')};
+const descPct=q=>q>=50?12:q>=24?8:q>=12?5:0;
+
+/* collage */
+$('#collage').innerHTML=['textil','mugs','papeleria','manillas','detalles','3d'].map(l=>`<div class="tile" style="background:${tileBg(l)}">${ICON[l]}</div>`).join('')+'<span class="sticker" style="top:-10px;left:8%;transform:rotate(-6deg)">hecho a mano</span><span class="sticker" style="bottom:-6px;right:6%;transform:rotate(4deg)">con tu nombre</span>';
+
+/* filtros */
+function renderFiltros(){$('#filtros').innerHTML=LINES.map(([k,l])=>`<button class="chip" type="button" data-f="${k}" aria-pressed="${k===filtro}">${l}</button>`).join('')}
+function renderGrid(){
+ const list=DATA.prods.filter(p=>filtro==='todo'?!p.pronto:p.l===filtro);
+ $('#grid').innerHTML=list.map(p=>{const d=desde(p);return `<article class="prod">
+  ${p.img?`<button class="art ph" type="button" data-lb="p:${p.id}" aria-label="Ver fotos de ${esc(p.n)}"><img src="${p.img[0]}" alt="${esc(p.n)}" loading="lazy"><span class="tag">${esc(LN[p.l])}</span>${p.nuevo?'<span class="tag new">Nuevo</span>':''}${p.img.length>1?`<span class="cnt">1 / ${p.img.length}</span>`:''}</button>`:`<div class="art" style="background:${tileBg(p.l)}"><span class="tag">${esc(LN[p.l])}</span>${p.nuevo?'<span class="tag new">Nuevo</span>':''}${p.pronto?'<span class="tag new">Muy pronto</span>':''}${ICON[p.l]}</div>`}
+  <div class="body"><h3>${esc(p.n)}</h3><p class="d">${esc(p.d)}</p>
+   ${p.v.length>1?`<select id="sel-${p.id}" aria-label="Tipo de ${esc(p.n)}">${p.v.map((v,i)=>`<option value="${i}">${esc(v.n)}${v.p?' · '+money(v.p):''}</option>`).join('')}</select>`:''}
+   <div class="row"><div class="price" id="pr-${p.id}">${priceHtml(p,0)}</div>
+   ${p.pronto?`<button class="btn sm" type="button" data-add="${p.id}">Cuéntanos tu idea</button>`:`<button class="btn sm solid" type="button" data-add="${p.id}">Agregar</button>`}</div></div></article>`}).join('');
+}
+function renderKits(){
+ $('#kitsGrid').innerHTML=DATA.kits.map(k=>`<article class="kit">${k.img?`<button class="kimg" type="button" data-lb="k:${k.id}" aria-label="Ver foto de ${esc(k.n)}"><img src="${k.img[0]}" alt="${esc(k.n)}" loading="lazy"></button>`:`<div style="width:40px;height:40px;color:var(--plum)">${ICON.kit}</div>`}<h3>${esc(k.n)}</h3><ul>${k.inc.map(i=>`<li>${esc(i)}</li>`).join('')}</ul>
+  <div class="row" style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap"><div class="price"><small>${k.p?'Desde':'Precio'}</small>${k.p?money(k.p):'A cotizar'}</div><button class="btn sm solid" type="button" data-kit="${k.id}">Pedir este kit</button></div></article>`).join('');
+}
+
+/* cart */
+function lineInfo(c){
+ if(c.t==='k'){const k=K[c.id];return {n:k.n,sub:k.inc.join(' · '),pu:k.p,adic:false,ph:k.ph,l:'kit'}}
+ const p=P[c.id];const v=p.v[c.vi]||p.v[0];const ad=(c.adic||[]).reduce((a,i)=>a+(DATA.adic[i]?.p||0),0);
+ return {n:p.n,sub:p.v.length>1?v.n:'',pu:v.p?v.p+ad:null,adic:!!p.adic,ph:p.ph,p,l:p.l};
+}
+function calc(){let tot=0,cot=0;cart.forEach(c=>{const i=lineInfo(c);const q=Math.max(1,parseInt(c.q)||1);if(i.pu){const d=c.t==='p'?descPct(q):0;tot+=i.pu*q*(1-d/100)}else cot++});return{tot,cot}}
+function save(){ls.set('lumin-cart',cart);$('#cartN').textContent=cart.reduce((a,c)=>a+(parseInt(c.q)||1),0)}
+function renderCart(){
+ save();
+ const box=$('#lines');
+ if(!cart.length){box.innerHTML='<div class="empty">Tu pedido está vacío. Toca <b>Agregar</b> en un producto del catálogo o <b>Pedir este kit</b>.</div>'}
+ else box.innerHTML=cart.map((c,ix)=>{const i=lineInfo(c);const q=Math.max(1,parseInt(c.q)||1);const d=c.t==='p'?descPct(q):0;
+  return `<div class="line"><div class="line-h"><div><b>${esc(i.n)}</b>${i.sub?`<div class="muted">${esc(i.sub)}</div>`:''}</div><button class="x" type="button" data-del="${ix}" aria-label="Quitar ${esc(i.n)}">×</button></div>
+   <div class="fields">${c.t==='p'&&i.p.v.length>1?`<label class="f" for="v-${ix}">Tipo<select id="v-${ix}" data-ix="${ix}" data-k="vi">${i.p.v.map((v,j)=>`<option value="${j}" ${j===c.vi?'selected':''}>${esc(v.n)}${v.p?' · '+money(v.p):''}</option>`).join('')}</select></label>`:'<span></span>'}
+   <label class="f" for="q-${ix}">Cantidad<input type="number" id="q-${ix}" min="1" inputmode="numeric" data-ix="${ix}" data-k="q" value="${esc(q)}"></label></div>
+   ${i.adic?`<div><div class="muted" style="margin-bottom:6px">Extras (por unidad)</div><div class="adic">${DATA.adic.map((a,j)=>`<label><input type="checkbox" data-ix="${ix}" data-ad="${j}" ${(c.adic||[]).includes(j)?'checked':''}>${esc(a.n)} +${money(a.p)}</label>`).join('')}</div></div>`:''}
+   <label class="f" for="n-${ix}">Tu idea<textarea id="n-${ix}" data-ix="${ix}" data-k="nota" placeholder="${esc(i.ph||'Cuéntanos tu idea')}">${esc(c.nota||'')}</textarea></label>
+   <div class="muted">${i.pu?`Aprox. ${money(i.pu)} c/u${d?` · ${d} % de descuento por cantidad`:''} → <b class="num" style="color:var(--ink)">${money(i.pu*q*(1-d/100))}</b>`:'Precio a cotizar según tu elección'}</div></div>`}).join('');
+ renderTotal();
+}
+function renderTotal(){
+ const {tot,cot}=calc();$('#total').textContent=money(tot);
+ $('#totNote').textContent=!cart.length?'Agrega productos del catálogo o un kit.':cot?`Más ${cot} producto${cot>1?'s':''} que cotizamos según tu elección. No incluye envío.`:'Precio aproximado, sin envío. El envío lo paga el cliente y depende de la ciudad; te lo confirmamos al cotizar.';
+ $('#sendWa').href='https://wa.me/'+WA+'?text='+encodeURIComponent(waText());
+}
+function waText(){
+ const {tot,cot}=calc();const L=['Hola Luminserafelle, quiero cotizar este pedido:',''];
+ cart.forEach((c,ix)=>{const i=lineInfo(c);const q=Math.max(1,parseInt(c.q)||1);L.push(`${ix+1}) ${q} × ${i.n}${i.sub?' · '+i.sub:''}`);
+  if(c.adic&&c.adic.length)L.push('   Extras: '+c.adic.map(j=>DATA.adic[j]?.n).filter(Boolean).join(', '));
+  if(c.nota)L.push('   Mi idea: '+c.nota);
+  const dq=c.t==='p'?descPct(q):0;
+  L.push('   '+(i.pu?`Aprox. ${money(i.pu)} c/u${dq?` · ${dq} % de descuento por cantidad → ${money(i.pu*q*(1-dq/100))}`:''}`:'Precio a cotizar'))});
+ if(!cart.length)L.push('(Todavía no he elegido productos)');
+ L.push('',`Total aproximado: ${money(tot)}${cot?' + productos a cotizar':''} (sin envío)`);
+ const n=$('#cNombre').value.trim(),ci=$('#cCiudad').value.trim(),f=$('#cFecha').value.trim();
+ if(n)L.push('Nombre: '+n);if(ci)L.push('Ciudad: '+ci);if(f)L.push('Lo necesito: '+f);
+ L.push('','Quedo pendiente de la cotización.');return L.join('\n');
+}
+document.addEventListener('click',e=>{
+ const f=e.target.closest('[data-f]');if(f){filtro=f.dataset.f;renderFiltros();renderGrid();return}
+ const sf=e.target.closest('[data-filtro]');if(sf){filtro=sf.dataset.filtro;renderFiltros();renderGrid()}
+ const a=e.target.closest('[data-add]');if(a){const id=a.dataset.add;const sel=$('#sel-'+id);cart.push({t:'p',id,vi:sel?parseInt(sel.value)||0:0,q:1,adic:[],nota:''});renderCart();toast('Agregado a tu pedido');return}
+ const k=e.target.closest('[data-kit]');if(k){cart.push({t:'k',id:k.dataset.kit,q:1,nota:''});renderCart();toast('Kit agregado a tu pedido');return}
+ const d=e.target.closest('[data-del]');if(d){cart.splice(parseInt(d.dataset.del),1);renderCart();return}
+ const cp=e.target.closest('[data-copy]');if(cp){copy(cp.dataset.copy,'Número copiado');return}
+});
+function copy(t,msg){try{navigator.clipboard.writeText(t).then(()=>toast(msg),()=>toast('No se pudo copiar. Selecciónalo y cópialo.'))}catch(e){toast('No se pudo copiar. Selecciónalo y cópialo.')}}
+$('#copyBtn').addEventListener('click',()=>copy(waText(),'Pedido copiado. Pégalo en WhatsApp.'));
+document.addEventListener('input',e=>{const el=e.target;if(el.dataset.ix===undefined){if(['cNombre','cCiudad','cFecha'].includes(el.id)){ls.set('lumin-cliente',{n:$('#cNombre').value,c:$('#cCiudad').value,f:$('#cFecha').value});renderTotal()}return}
+ const c=cart[parseInt(el.dataset.ix)];if(!c)return;
+ if(el.dataset.ad!==undefined){const j=parseInt(el.dataset.ad);c.adic=c.adic||[];if(el.checked){if(!c.adic.includes(j))c.adic.push(j)}else c.adic=c.adic.filter(x=>x!==j);renderCart();return}
+ if(el.dataset.k==='vi'){c.vi=parseInt(el.value)||0;renderCart();return}
+ if(el.dataset.k==='q'){c.q=el.value;save();renderTotal();return}
+ if(el.dataset.k==='nota'){c.nota=el.value;save();renderTotal()}
+});
+document.addEventListener('change',e=>{const sl=e.target.closest('select[id^="sel-"]');if(sl){const id=sl.id.slice(4);const el=$('#pr-'+id);if(el&&P[id])el.innerHTML=priceHtml(P[id],parseInt(sl.value)||0)}if(e.target.dataset.k==='q')renderCart()});
+const cl=ls.get('lumin-cliente');if(cl){$('#cNombre').value=cl.n||'';$('#cCiudad').value=cl.c||'';$('#cFecha').value=cl.f||''}
+$('#empresaWa').href='https://wa.me/'+WA+'?text='+encodeURIComponent('Hola Luminserafelle, quiero cotizar un pedido para mi empresa o evento. Producto: \nCantidad aproximada: \nFecha: ');
+
+/* fotos */
+let galAll=false;function renderGal(){const g=DATA.gal||[];const n=galAll?g.length:Math.min(12,g.length);$('#gal').innerHTML=g.slice(0,n).map((x,i)=>`<button type="button" data-lb="g:${i}" aria-label="Ver trabajo ${i+1}"><img src="${x}" alt="Trabajo de Lumin Serafelle" loading="lazy"></button>`).join('');$('#galMas').hidden=galAll||g.length<=12;$('#galMas').textContent='Ver más trabajos ('+(g.length-12)+')'}
+renderGal();$('#galMas').addEventListener('click',()=>{galAll=true;renderGal()});
+let lbL=[],lbI=0,lbT='';
+function lbShow(){$('#lbImg').src=lbL[lbI];$('#lbImg').alt=lbT;$('#lbCt').textContent=(lbT?lbT+' · ':'')+(lbI+1)+' / '+lbL.length;const m=lbL.length>1;$('#lb .pv').hidden=!m;$('#lb .nx').hidden=!m}
+function lbOpen(list,i,t){lbL=list;lbI=i;lbT=t||'';lbShow();$('#lb').hidden=false;document.body.style.overflow='hidden'}
+function lbClose(){$('#lb').hidden=true;document.body.style.overflow=''}
+document.addEventListener('click',e=>{
+ const o=e.target.closest('[data-lb]');if(o){const[t,id]=o.dataset.lb.split(':');if(t==='p')lbOpen(P[id].img,0,P[id].n);else if(t==='k')lbOpen(K[id].img,0,K[id].n);else lbOpen(DATA.gal,parseInt(id),'Piezas únicas');return}
+ const mv=e.target.closest('[data-lbm]');if(mv){lbI=(lbI+parseInt(mv.dataset.lbm)+lbL.length)%lbL.length;lbShow();return}
+ if(e.target.closest('[data-lbx]')||e.target.id==='lb')lbClose();
+});
+document.addEventListener('keydown',e=>{if($('#lb').hidden)return;if(e.key==='Escape')lbClose();if(e.key==='ArrowRight'){lbI=(lbI+1)%lbL.length;lbShow()}if(e.key==='ArrowLeft'){lbI=(lbI-1+lbL.length)%lbL.length;lbShow()}});
+let tx=null;$('#lb').addEventListener('touchstart',e=>{tx=e.touches[0].clientX},{passive:true});$('#lb').addEventListener('touchend',e=>{if(tx===null)return;const dx=e.changedTouches[0].clientX-tx;tx=null;if(Math.abs(dx)>40&&lbL.length>1){lbI=(lbI+(dx<0?1:-1)+lbL.length)%lbL.length;lbShow()}});
+$('#waFloat').href='https://wa.me/'+WA+'?text='+encodeURIComponent('Hola Lumin Serafelle, quiero información sobre ');
+renderFiltros();renderGrid();renderKits();renderCart();
+
+/* banners */
+(function(){
+ const bn=$('#banners');if(!bn)return;
+ const track=$('.bn-track',bn),n=track.children.length,dots=$('.bn-dots',bn);
+ const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+ let i=0,timer=null;
+ dots.innerHTML=Array.from({length:n},(_,k)=>`<button type="button" aria-label="Ver banner ${k+1}"></button>`).join('');
+ function go(j){i=(j+n)%n;track.style.transform=`translateX(${-100*i}%)`;[...dots.children].forEach((d,k)=>d.setAttribute('aria-current',k===i?'true':'false'));[...track.children].forEach((s,k)=>{s.inert=k!==i})}
+ function play(){if(reduce)return;clearInterval(timer);timer=setInterval(()=>go(i+1),7000)}
+ function stop(){clearInterval(timer)}
+ [...dots.children].forEach((d,k)=>d.addEventListener('click',()=>{go(k);play()}));
+ $('.prev',bn).addEventListener('click',()=>{go(i-1);play()});
+ $('.next',bn).addEventListener('click',()=>{go(i+1);play()});
+ bn.addEventListener('mouseenter',stop);bn.addEventListener('mouseleave',play);
+ bn.addEventListener('focusin',stop);
+ let x0=null;bn.addEventListener('touchstart',e=>{x0=e.touches[0].clientX;stop()},{passive:true});
+ bn.addEventListener('touchend',e=>{if(x0===null)return;const dx=e.changedTouches[0].clientX-x0;x0=null;if(Math.abs(dx)>40)go(i+(dx<0?1:-1));play()});
+ document.addEventListener('visibilitychange',()=>document.hidden?stop():play());
+ go(0);play();
+})();
+
+})();
+
+// ===== FIN bloque JS n.º 1 =====
+</script>
+<!-- ===== FIN lógica JavaScript n.º 1 ===== -->
+
+</body></html>
